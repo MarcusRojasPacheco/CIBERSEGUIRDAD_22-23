@@ -6,7 +6,7 @@ transition: drop
 paginate: true
 size: 16:9
 author: Grupo 2
-feedback link: www.google.es
+feedback link: https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/HACKING_ETICO/P.01_G2_HE.html
 ---
 
 <style>
