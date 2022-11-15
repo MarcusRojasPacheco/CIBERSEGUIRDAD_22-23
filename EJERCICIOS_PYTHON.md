@@ -25,7 +25,23 @@ variable = C;
 variable = PHP;
 ```
 > Pero tanto en PHP y C se necesita un **;** mientra que en el lenguaje de programación de python es indentado.
-> 
+> ```python
+# PYTHON EJERCICIO 2.5
+def sum(a):
+    total = 0
+    for i in range(len(a)):
+        total += a[i]
+    return  total
+def multip(b):
+    total = 1
+    for i in range(len(b)):
+        total *= b[i]
+    return total
+
+print(sum([1,2,3,4]))
+print(multip([1,2,3,4]))
+
+```
 > Para poder comentar en Python seria **#**, mientra que en C seria **/* */** y en PHP seria **//**.
 > 
 > Datos primitivos
