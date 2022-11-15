@@ -1,17 +1,16 @@
 #Escribir una función filtrar_palabras() que tome una lista de palabras y un entero n, y
 #devuelva las palabras que tengan más de n caracteres.
 
-def filtrar_palabra(lista,num):
+def filtrar_pala(lista, numero):
     array = []
     for pala in lista:
-        if len(pala) >= num:
+        if len(pala) <= numero :
             array.append(pala)
-        if len(array) == 0:
-            print("Ninguna palabra :(")
-        else:
-            print(array)
+    if len(array) == 0:
+        print("NINGUA PALABRA :(")
+    else:
+        print(array)
+lista = ["sa", "sdssdsd", "sdsdsdsdd", "rrtrdgdv"]
+numero = int(input("ESCRIBE UN NUMERO: "))
 
-lista = ["sa", "sfsaf", "dsfds", "idsids"]
-num = input("Escribe un numero: ")
-
-filtrar_palabra(lista,num)
+filtrar_pala(lista,numero)
