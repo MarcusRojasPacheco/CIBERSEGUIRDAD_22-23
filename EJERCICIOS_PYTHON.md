@@ -184,6 +184,9 @@ ano = int(input("ESCRIBE UN AÑO PARA SABER SI ES BISIESTO: "))
 ES_BISIESTO(ano)
 ```
 
+### 3º [CE. c] Teniendo todos los ejercicios realizados y entregado. Sobre el código fuente creado en la relación de ejercicios de las actividades 0 y 1 de la unidad, realiza en un documento los comentarios sobre todos los ejercicios indicando que elementos del código fuente has utilizado y qué función tienen.
+
+
 
 
 [VOLVER PAGINA PRINCIPAL](./)
