@@ -110,7 +110,7 @@ clasificacion(4)
 #### ¿Qué diferencias existen entre los dos lenguajes?
 
 > En **C** es un lenguaje compilado y en python es un lenguaje interpretado.
-> En el ejercicio anterior en **C** es diferentes, ahora se pondra un ejemplo del mismo.
+> En el ejercicio anterior el IF en **C** es diferentes en comparación con Python, ahora se pondra un ejemplo del mismo.
  
 ```c
 /* EJEMPLO EN C */
@@ -121,14 +121,68 @@ clasificacion(4)
         if(a > b){
             printf("Mayor es %d",a);
         }else if(a == b){
-            printf("son igules %d y %d"a,b)
-        }else
-            printf("Mayor es %d",b)
+            printf("son igules %d y %d"a,b);
+        }else{
+            printf("Mayor es %d",b);
+        }
     }
 ```
-
 #### ¿Para qué tipo de programa puede servir cada lenguaje?
+
+```python
+# PYTHON EJERCICIO 2.18
+def ES_BISIESTO(ano):
+    if ano%4 == 0:
+        if ano%100 != 0:
+            print("ES BISIESTO")
+        else:
+            print("NO ES BISIESTO")
+
+ano = int(input("ESCRIBE UN AÑO PARA SABER SI ES BISIESTO: "))
+ES_BISIESTO(ano)
+```
+
+> **Python**: Normalmente utilizado para un aprendizaje que puede ser automatico o que puede usarse para desarrollo web o en aplicacciones.
+> **C**: Se suele utilizar para un desarrollo de aplicaciones que suele ser relacionadas con hardware, S.O, etc..., ya que cuando compila da tambien el lenguaje codigo maquina que es como se comunica nuestro ordenador.
+
 #### ¿Cómo sería el proceso de lectura del código fuente de cada programa?
+
+```python
+# PYTHON EJERCICIO 2.07
+ddef ES_UN_NUMERO(a):
+    try:
+        int(a)
+    except:
+        return False;
+    return True;
+
+def ES_UN_CARACTER(b):
+    if(len(b)>1):
+        return False
+    if(len(b)==1):
+        return True
+
+def inver(c):
+    transformar = ""
+    if(ES_UN_NUMERO(c)):
+        print("ES UN NUMERO")
+        return "ERROR"
+    elif not(ES_UN_CARACTER(c) and ES_UN_NUMERO(c)):
+        for i in range(len(c)):
+            transformar = transformar + c[(len(c)-1)-i]
+        return transformar
+    else:
+        print("NO DEBE SER UN NUMERO O UNA SOLA LETRA")
+
+def ES_POLINDROMO(a):
+    inv=inver(a)
+    if(inv == a):
+        return True
+    else:
+        return False
+print(ES_POLINDROMO("radar"))
+```
+
 
 
 
