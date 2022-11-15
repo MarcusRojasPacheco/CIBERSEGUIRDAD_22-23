@@ -8,8 +8,14 @@ layout: default
 
 #### EJERCICIO [PARTE 01]
 
-```js
-var fun = function ()
+##### EJERCICIO 1.3
+```python
+cont=0
+while cont < 10:
+    cont +=1
+    if cont % 3 == 0:
+        print(cont)
+        continue
 ```
 
 #### EJERCICIO [PARTE 02]
