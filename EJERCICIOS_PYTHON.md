@@ -10,6 +10,7 @@ layout: default
 
 ##### EJERCICIO 1.3
 ```python
+# PYTHON
 cont=0
 while cont < 10:
     cont +=1
@@ -17,6 +18,12 @@ while cont < 10:
         print(cont)
         continue
 ```
+> La manera de definir la variable es de la siguiente forma.
+> ```python
+cont = 0
+```
+> 
+> d
 
 #### EJERCICIO [PARTE 02]
 
