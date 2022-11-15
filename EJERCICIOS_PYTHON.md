@@ -47,12 +47,12 @@ print(sum([1,2,3,4]))
 print(multip([1,2,3,4]))
 ```
 > Para poder comentar en Python seria **#**, mientra que en C seria **/* */** y en PHP seria **//**.
-> 
+
 Datos primitivos
 
-> - Python [int, float, bool, str]
-> - C [char, shor int, int, long int, bool, float, double, long double]
-> - PHP [boolean, integer, float, string, array, object, callable, iterable, resource, null]
+> - **Python**: [int, float, bool, str]
+> - **C**: [char, shor int, int, long int, bool, float, double, long double]
+> - **PHP**: [boolean, integer, float, string, array, object, callable, iterable, resource, null]
 
 ```python
 # PYTHON EJERCICIO 2.10
