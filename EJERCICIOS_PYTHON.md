@@ -25,7 +25,9 @@ variable = C;
 $variable = PHP;
 ```
 > Pero tanto en PHP y C se necesita un **;** mientra que en el lenguaje de programación de python es indentado.
+
 #### EJERCICIO [PARTE 02]
+
 ```python
 # PYTHON EJERCICIO 2.5
 def sum(a):
