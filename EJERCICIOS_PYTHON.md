@@ -27,6 +27,12 @@ variable = PHP;
 > Pero tanto en PHP y C se necesita un **;** mientra que en el lenguaje de programación de python es indentado.
 > 
 > Para poder comentar en Python seria **#**, mientra que en C seria **/* */** y en PHP seria **//**.
+> 
+> Datos primitivos
+> - Python [int, float, bool, str]
+> - C [char, shor int, int, long int, bool, float, double, long double]
+> - PHP [boolean, integer, float, string, array, object, callable, iterable, resource, null]
+
 
 #### EJERCICIO [PARTE 02]
 
