@@ -25,7 +25,7 @@ variable = C;
 $variable = PHP;
 ```
 > Pero tanto en PHP y C se necesita un **;** mientra que en el lenguaje de programación de python es indentado.
-
+#### EJERCICIO [PARTE 02]
 ```python
 # PYTHON EJERCICIO 2.5
 def sum(a):
@@ -65,16 +65,18 @@ def maximo_en_lista(lista):
 
 maximo_en_lista(lista)
 ```
-> - Python: Las tuplas es este lenguaje es una estructura parecida a una lista pero esta inmutable, por lo que no puede ser modificado durante la ejercución del mismo programa.
-> - C: Tiene tener una cabecera de la función, que tiene indicar el nomnbre y una lista de argumentos cerrada con parentesis, tambien una lista de declaración de argumentos si en este caso incluye estos en la cabecera y por ultimo la función a realizar.
-> - PHP: La estructura es parecida con el lenguaje C, lo unico que tiene diferente son en los arrays.
+> - **Python**: Las tuplas es este lenguaje es una estructura parecida a una lista pero esta inmutable, por lo que no puede ser modificado durante la ejercución del mismo programa.
+> - **C**: Tiene tener una cabecera de la función, que tiene indicar el nomnbre y una lista de argumentos cerrada con parentesis, tambien una lista de declaración de argumentos si en este caso incluye estos en la cabecera y por ultimo la función a realizar.
+> - **PHP**: La estructura es parecida con el lenguaje C, lo unico que tiene diferente son en los arrays.
 > 
-> Bucles en for en los diferentes lenguajes.
-> - d
-> - d
-> - d
+> Bucles en **for** en los diferentes lenguajes.
+> - **Python**: La palabra clave es **for** seguida con el nombre de la variable del ciclo, la palabra **in** y una llamada a la función **range()** que se especifica los parametros que se necesita seguido con **:**.
+> - **C**: Se empieza como **Python** con la palabra **for** pero en este caso la sentencia seria **_(variable = 0; sentencia; sumatorio);_**.
+> - **PHP**: Es como el C pero en las variables y sentencias se debe poner **$**.
 
-#### EJERCICIO [PARTE 02]
+### 2º [CE. b] En esta actividad vamos a realizar una comparación entre Python y C, es por ello que debes elegir tres de los ejercicios de los realizados en clase y contestar a las siguientes preguntas.
+
+
 
 
 
