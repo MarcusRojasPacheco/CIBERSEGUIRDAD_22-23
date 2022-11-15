@@ -105,7 +105,7 @@ clasificacion(4)
 
 #### ¿Qué diferencias habría en el desarrollo del programa?
 
-> Con las variables en **C** se tiene que declarar su tipo, pero con **Python** no es necesario y no te obligar a declararlo.
+> Con las variables en **C** se tiene que declarar su tipo, pero con **Python** no es necesario y no te obligar a declararlo, ya que en **C** se tendria declarar la variable y la estructura de control.
 
 #### ¿Qué diferencias existen entre los dos lenguajes?
 
@@ -183,6 +183,8 @@ def ES_BISIESTO(ano):
 ano = int(input("ESCRIBE UN AÑO PARA SABER SI ES BISIESTO: "))
 ES_BISIESTO(ano)
 ```
+> - **Python**: Se compila con un codigo de **bytes** lo que luego es interpretado por un programa.
+> - **C**: Se compila directamente en el codigo maquina que es ejecutado por la **CPU**, ya que al compilar nos da un archivo que es codigo maquina que solo entiende nuestro ordenador y puede iterpretar.
 
 ### 3º [CE. c] Teniendo todos los ejercicios realizados y entregado. Sobre el código fuente creado en la relación de ejercicios de las actividades 0 y 1 de la unidad, realiza en un documento los comentarios sobre todos los ejercicios indicando que elementos del código fuente has utilizado y qué función tienen.
 
