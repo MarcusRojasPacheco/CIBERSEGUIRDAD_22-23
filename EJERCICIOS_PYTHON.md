@@ -130,24 +130,6 @@ clasificacion(4)
 #### ¿Para qué tipo de programa puede servir cada lenguaje?
 
 ```python
-# PYTHON EJERCICIO 2.18
-def ES_BISIESTO(ano):
-    if ano%4 == 0:
-        if ano%100 != 0:
-            print("ES BISIESTO")
-        else:
-            print("NO ES BISIESTO")
-
-ano = int(input("ESCRIBE UN AÑO PARA SABER SI ES BISIESTO: "))
-ES_BISIESTO(ano)
-```
-
-> **Python**: Normalmente utilizado para un aprendizaje que puede ser automatico o que puede usarse para desarrollo web o en aplicacciones.
-> **C**: Se suele utilizar para un desarrollo de aplicaciones que suele ser relacionadas con hardware, S.O, etc..., ya que cuando compila da tambien el lenguaje codigo maquina que es como se comunica nuestro ordenador.
-
-#### ¿Cómo sería el proceso de lectura del código fuente de cada programa?
-
-```python
 # PYTHON EJERCICIO 2.07
 ddef ES_UN_NUMERO(a):
     try:
@@ -183,6 +165,24 @@ def ES_POLINDROMO(a):
 print(ES_POLINDROMO("radar"))
 ```
 
+> **Python**: Normalmente utilizado para un aprendizaje que puede ser automatico o que puede usarse para desarrollo web o en aplicacciones.
+>
+> **C**: Se suele utilizar para un desarrollo de aplicaciones que suele ser relacionadas con hardware, S.O, etc..., ya que cuando compila da tambien el lenguaje codigo maquina que es como se comunica nuestro ordenador.
+
+#### ¿Cómo sería el proceso de lectura del código fuente de cada programa?
+
+```python
+# PYTHON EJERCICIO 2.18
+def ES_BISIESTO(ano):
+    if ano%4 == 0:
+        if ano%100 != 0:
+            print("ES BISIESTO")
+        else:
+            print("NO ES BISIESTO")
+
+ano = int(input("ESCRIBE UN AÑO PARA SABER SI ES BISIESTO: "))
+ES_BISIESTO(ano)
+```
 
 
 
