@@ -19,11 +19,13 @@ while cont < 10:
         continue
 ```
 > La manera de definir la variable es de la siguiente forma.
+
 ```markdown
 variable = python
 variable = C;
 $variable = PHP;
 ```
+
 > Pero tanto en PHP y C se necesita un **;** mientra que en el lenguaje de programación de python es indentado.
 
 #### EJERCICIO [PARTE 02]
