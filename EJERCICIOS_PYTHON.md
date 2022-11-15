@@ -10,7 +10,7 @@ layout: default
 
 ##### EJERCICIO 1.3
 ```python
-# PYTHON
+# PYTHON EJERCICIO 1.3
 cont=0
 while cont < 10:
     cont +=1
@@ -19,11 +19,13 @@ while cont < 10:
         continue
 ```
 > La manera de definir la variable es de la siguiente forma.
-> ```python
-cont = 0
+> ```markdown
+variable = python
+variable = C;
+variable = PHP;
 ```
-> 
-> d
+> Pero tanto en PHP y C se necesita un **;** mientra que en el lenguaje de programación de python es indentado.
+> Para poder comentar en Python seria **#**, mientra que en C seria **/* */** y en PHP seria //.
 
 #### EJERCICIO [PARTE 02]
 
