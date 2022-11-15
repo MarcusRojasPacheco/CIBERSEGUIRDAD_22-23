@@ -46,7 +46,8 @@ print(multip([1,2,3,4]))
 ```
 > Para poder comentar en Python seria **#**, mientra que en C seria **/* */** y en PHP seria **//**.
 > 
-> Datos primitivos
+Datos primitivos
+
 > - Python [int, float, bool, str]
 > - C [char, shor int, int, long int, bool, float, double, long double]
 > - PHP [boolean, integer, float, string, array, object, callable, iterable, resource, null]
@@ -70,8 +71,9 @@ maximo_en_lista(lista)
 > - **Python**: Las tuplas es este lenguaje es una estructura parecida a una lista pero esta inmutable, por lo que no puede ser modificado durante la ejercución del mismo programa.
 > - **C**: Tiene tener una cabecera de la función, que tiene indicar el nomnbre y una lista de argumentos cerrada con parentesis, tambien una lista de declaración de argumentos si en este caso incluye estos en la cabecera y por ultimo la función a realizar.
 > - **PHP**: La estructura es parecida con el lenguaje C, lo unico que tiene diferente son en los arrays.
-> 
-> Bucles en **for** en los diferentes lenguajes.
+
+Bucles en **for** en los diferentes lenguajes.
+
 > - **Python**: La palabra clave es **for** seguida con el nombre de la variable del ciclo, la palabra **in** y una llamada a la función **range()** que se especifica los parametros que se necesita seguido con **:**.
 > - **C**: Se empieza como **Python** con la palabra **for** pero en este caso la sentencia seria **_(variable = 0; sentencia; sumatorio);_**.
 > - **PHP**: Es como el C pero en las variables y sentencias se debe poner **$**.
