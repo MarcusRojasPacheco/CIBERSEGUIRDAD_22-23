@@ -102,8 +102,31 @@ def clasificacion(numero):
 
 clasificacion(4)
 ```
+
 #### ¿Qué diferencias habría en el desarrollo del programa?
+
+> Con las variables en **C** se tiene que declarar su tipo, pero con **Python** no es necesario y no te obligar a declararlo.
+
 #### ¿Qué diferencias existen entre los dos lenguajes?
+
+> En **C** es un lenguaje compilado y en python es un lenguaje interpretado.
+> En el ejercicio anterior en **C** es diferentes, ahora se pondra un ejemplo del mismo.
+ 
+```c
+/* EJEMPLO EN C */
+#include <stdio.h>
+    int main()
+    {
+        int a,b;
+        if(a > b){
+            printf("Mayor es %d",a);
+        }else if(a == b){
+            printf("son igules %d y %d"a,b)
+        }else
+            printf("Mayor es %d",b)
+    }
+```
+
 #### ¿Para qué tipo de programa puede servir cada lenguaje?
 #### ¿Cómo sería el proceso de lectura del código fuente de cada programa?
 
