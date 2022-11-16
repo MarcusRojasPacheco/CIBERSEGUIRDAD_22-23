@@ -192,7 +192,7 @@ ES_BISIESTO(ano)
 
 #### EJERCICIOS CREADO CON EL ELEMENTO FOR
 
-> Ahora vamos a ver que ejercicio a usado la siguiente elemento en los ejercicios creado.
+> Ahora vamos a ver que ejercicio ha usado la siguiente elemento en los ejercicios creado.
 
 ```python
 # EJEMPLO PYTHON DE FOR
@@ -203,6 +203,8 @@ ES_BISIESTO(ano)
 > Como vemos en esta tabla con todos los ejercicios creados, se ve como se usa de diferente forma el **FOR** para lo que pida el ejercicio y lo que vayamos a hacer en él.
 > 
 > También vemos que algunos ejercicios se necesita de algunos anteriores para poder hacerlo, empleando las mismas sentencia y condición de él.
+> 
+> Los bubcles son lo más utilizado al hacer una acción repetida.
 
 | PARTE | EJERCICIO                                                                                                                                 | 
 |:-----:|:------------------------------------------------------------------------------------------------------------------------------------------|
@@ -261,5 +263,13 @@ ES_BISIESTO(ano)
 
 
 #### EJERCICIOS CREADO CON EL ELEMENTO VARIABLES
+
+> Las variables que se usan en los ejercicios son diferentes en el cual a veces se usa en cadena o se una número entero o en algún caso se usa un array.
+
+| PARTE | EJERCICIO                                                                                                                    | 
+|:-----:|:-----------------------------------------------------------------------------------------------------------------------------|
+|   1   | [EJERCICIO1](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2001) |
+|   2   | [EJERCICIO2](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002) |
+
 
 [VOLVER PAGINA PRINCIPAL](./)
