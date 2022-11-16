@@ -188,7 +188,45 @@ ES_BISIESTO(ano)
 
 ### 3º [CE. c] Teniendo todos los ejercicios realizados y entregado. Sobre el código fuente creado en la relación de ejercicios de las actividades 0 y 1 de la unidad, realiza en un documento los comentarios sobre todos los ejercicios indicando que elementos del código fuente has utilizado y qué función tienen.
 
+> Ahora vamos a ver las diferentes elementos usados en los ejercicios.
 
+#### EJERCICIOS CREADO CON EL ELEMENTO FOR
+
+> Ahora vamos a ver que ejercicio a usado la siguiente elemento en los ejercicios creado.
+
+```python
+# EJEMPLO PYTHON DE FOR
+    for VARIABLE in VARIABLE_ANTE_CREADA:
+        if VARIABLE CONDICION VARIABLE:
+            SENTENCIA
+        else:
+            SENTNECIA
+```
+
+> Como vemos en esta tabla con todos los ejercicios creados, se ve como se usa de diferente forma el **FOR** para lo que pida el ejercicio y lo que vayamos a hacer en él.
+> 
+> También vemos que algunos ejercicios se necesita de algunos anteriores para poder hacerlo, empleando las mismas sentencia y condición de él.
+
+| PARTE    | EJERCICIO                                                                                                                                 | 
+|:---------|:------------------------------------------------------------------------------------------------------------------------------------------|
+| PARTE 01 | [EJERCICIO1.3](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2001/EJE_03.py)  |
+| PARTE 02 | [EJERCICIO2.3](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_03.py)  |
+| PARTE 02 | [EJERCICIO2.4](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_04.py)  |
+| PARTE 02 | [EJERCICIO2.5](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_05.py)  |
+| PARTE 02 | [EJERCICIO2.6](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_06.py)  |
+| PARTE 02 | [EJERCICIO2.7](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_07.py)  |
+| PARTE 02 | [EJERCICIO2.8](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_08.py)  |
+| PARTE 02 | [EJERCICIO2.9](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_09.py)  |
+| PARTE 02 | [EJERCICIO2.10](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_10.py) |
+| PARTE 02 | [EJERCICIO2.11](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_11.py) |
+| PARTE 02 | [EJERCICIO2.12](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_12.py) |
+| PARTE 02 | [EJERCICIO2.13](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_13.py) |
+| PARTE 02 | [EJERCICIO2.15](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_15.py) |
+| PARTE 02 | [EJERCICIO2.16](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_16.py) |
+| PARTE 02 | [EJERCICIO2.17](https://github.com/MarcusRojasPacheco/CIBERSEGUIRDAD_22-23/blob/main/PUESTA%20EN%20PRODUCION/PYTHON/PARTE%2002/EJE_17.py) |
+
+> 
+> 
 
 
 [VOLVER PAGINA PRINCIPAL](./)
