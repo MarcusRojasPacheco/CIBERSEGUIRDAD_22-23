@@ -1,0 +1,111 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>SEGURIDAD PARA EL GRUB</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Proyecto-2-GRUB"
+                  title="SEGURIDAD PARA EL GRUB"
+                  environment="web"
+                  feedback-link="https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708">
+    
+      <google-codelab-step label="¿QUE ES EL GRUB?" duration="2">
+        <h2 is-upgraded>EL GRUB </h2>
+<p> El Grub <a href="https://es.wikipedia.org/wiki/GNU_GRUB" target="_blank">(Grand Unified Boot loader)</a>, es un gestor de arranque múltiple desarrollado inicialmente para el sistema GNU Hurd. El gestor de arranque grub tiene varias funciones, pero sin duda su misión principal es permitirnos seleccionar el sistema operativo que queremos usar justo en el momento de arrancar nuestro ordenador.  <br>  En esta guía vamos a utilizar el sistema operativo <code>DEBIAN</code>.  <br>  </p>
+<p class="image-container"><img alt="DEBIAN" src="img\\72bbd248b3cdd923.png">       </p>
+<h3 is-upgraded>ISO DE DEBIAN </h3>
+<p><a href="https://www.debian.org/CD/http-ftp/index.es.html" target="_blank"><paper-button class="colored" raised>DESCARGAR DEBIAN</paper-button></a>  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CONTRASEÑA DE SEGURIDAD" duration="5">
+        <h2 is-upgraded>COPIA DE SEGURIDAD EN LOS ARCHIVOS DE CONFIGURACIÓN </h2>
+<p> Ante de hacer cambios en los archivos de configuración tenemos que tomar unas ciertas precauciones ante de modificar los archivos, con lo que vamos hacer una copia de estos archivos por seguridad y poder restablecerlo si algo ha salido mal.  <br>  Tambien en mi caso no existe usuarios normales, solo existe el usuario <code>root</code>.  </p>
+<h3 is-upgraded>COMANDOS </h3>
+<p><code>sudo cp /etc/default/grub ~/grub.old<br>sudo cp /etc/grub.d/00_header ~/00_header.old<br>sudo cp /etc/grub.d/30_os-prober ~/30_os-prober.old</code>  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\2118983f9560d3d0.PNG">  </p>
+<h2 is-upgraded>PROTEGER LAS CONTRASEÑA DE QUIEN PUEDA MODIFICAR EL GRUB </h2>
+<p> Ahora vamos a cifrar las contraseña de los usuarios con el siguiente comando <code>sudo grub-mkpasswd-pbkdf2</code> y nos pedirá la contraseña que vamos a ocultar y con resultado nos dará un <code>HASH</code> que nos servira luego.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="SEGURIDAD USUARIO" src="img\\1b4f3c7576c03672.PNG">  </p>
+<p> Ahora vamos a usar el comando <code>sudo nano /etc/grub.d/00_header</code> para poder modificar el archivo y poner la siguiente linea al final del archivo de texto.  </p>
+<h3 is-upgraded>EJEMPLO  </h3>
+<p class="image-container"><img alt="SEGURIDAD USUARIO" src="img\\80bcd6cb92cb59d4.PNG">  </p>
+<p> Ahora vamos actualizar el grub con el siguiente comando <code>update-grub2</code>.  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="OCULTACIÓN DEL ARRANQUE" duration="5">
+        <h2 is-upgraded>QUITAR TIEMPO DEL GRUB </h2>
+<p> Ahora vamos a configurar el fichero  <code>/etc/default/grub</code> y vamos a quitar el tiempo de espera, para ello vamos a buscar <code>GRUB_TIMEOUT</code> y vamos a ponerle el valor <code>0</code>, con ello ya nuestro sistema no saltara con la elección del sistema y guardamos los cambios realizados.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="SEGURIDAD GRUB INICIO" src="img\\4eef66703d103f6a.PNG">  </p>
+<p> También se puede modificar el fichero <code>/etc/grub.d/30_os-prober</code> y en la ultima linea <code>adjust_timeout</code> la comentamos.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="SEGURIDAD GRUB INICIO" src="img\\8d62fc065e38c972.PNG">  </p>
+<p> Ahora con el comando <code>update-grub2</code> actualizamos nuestro grub.  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="COPIA DE SEGURIDAD" duration="10">
+        <h2 is-upgraded>AUTOMATIZAR LAS COPIAS </h2>
+<p> Ahora vamos a crear que haga una copia de seguridad para nuestro sistema. Antes de empezar si no tenemos la aplicación <code>backup</code>, si no la tenemos tenemos poner el comando <code>apt-get install deja-dup -y</code>, una vez instalado vamos nos va preguntar que queremos proteger. <br>  En este caso vamos a hacer la copia de seguridad a las carpeta [<code>Home</code> - <code>/boot</code> - <code>/etc</code>].  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\3a49fdf901ad1e6c.PNG">      </p>
+<p> También vamos a poner que no copie las carpeta o dirección que no querríamos en este caso seria [<code>Papelera</code> - <code>Descarga</code> - <code>/tmp</code>].  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\aeaae79432da3ca6.PNG">      </p>
+<p> Ahora vamos a decirle donde queremos hacer la copia de seguridad, en este caso se ha creado una carpeta con el nombre de <code>Backups</code>.  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\9c81a70225da6dc0.PNG">      </p>
+<p> Para estar mas seguro vamos a poner una contraseña en el Backup que vamos a crear, también nos va dar la opción de no poner la contraseña, pero para mas protección vamos a elegir la opción de contraseña.  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\96625e9df2ed7569.PNG">    </p>
+<p> Esperamos al que el proceso se termine, la primera vez va tarda un poco ya que tiene copiar todo los ficheros y archivos o carpeta que querríamos copiar.  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\8949013c228a4163.PNG">      </p>
+<p> Ahora vamos a definir cuando queremos la copia vamos a poner como máximo <code>al menos tres meses</code> y vamos poner que el respaldo automático será cada semana.  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\90805a87d9359581.PNG">      </p>
+<p> Ahora vamos si queremos podemos a respaldar la copia creada.  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\3b13e8c7d122d6df.PNG">      </p>
+<p> Y nos va pedir la contraseña puesta en la copia.  <br>  </p>
+<p class="image-container"><img alt="COPIAS DE CARPETA" src="img\\2b0a1c782d74f255.PNG">      </p>
+<p> Con todo esto ya tenemos la copia de los archivos importante.  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CONCLUSIÓN" duration="2">
+        <h2 is-upgraded>NO ES SUFICIENTE ESTA SEGURIDAD </h2>
+<p> Con todas esta seguridad no seria suficiente ya que aunque el atacante podría entrar usando un <code>USB</code> con un sistema operativo y de hay poder entrar y podría quitar toda la seguridad implementada, para aumentar la seguirdad podríamos configurar la <a href="https://super-tribble-5ef3ac53.pages.github.io/docs/proyectos/proyectos-BIOS/" target="_blank">BIOS</a>, o hacer particiones en el disco y cifrarlo para que el atacante le cueste un poco mas de que se salte toda la seguridad que se ponga en el equipo.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

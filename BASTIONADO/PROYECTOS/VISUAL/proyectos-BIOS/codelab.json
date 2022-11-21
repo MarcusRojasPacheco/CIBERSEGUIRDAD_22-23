@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-10-16T16:37:40+02:00",
+  "id": "Proyecto-1-BIOS-UEFI",
+  "duration": 28,
+  "title": "SEGURIDAD EN NUESTRAS BIOS",
+  "summary": "Seguridad para nuestras BIOS",
+  "source": "PROYECTO-BIOS.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/MarcusRojasPacheco",
+  "url": "Proyecto-1-BIOS-UEFI"
+}

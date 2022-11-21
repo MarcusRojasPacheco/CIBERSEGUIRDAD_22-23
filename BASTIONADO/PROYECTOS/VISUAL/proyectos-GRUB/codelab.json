@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-10-23T16:53:05+02:00",
+  "id": "Proyecto-2-GRUB",
+  "duration": 24,
+  "title": "SEGURIDAD PARA EL GRUB",
+  "summary": "Seguridad para el GRUB",
+  "source": "PROYECTO-GRUB.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708",
+  "url": "Proyecto-2-GRUB"
+}

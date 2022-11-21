@@ -1,0 +1,128 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>SEGURIDAD EN NUESTRAS BIOS</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Proyecto-1-BIOS-UEFI"
+                  title="SEGURIDAD EN NUESTRAS BIOS"
+                  environment="web"
+                  feedback-link="https://github.com/MarcusRojasPacheco">
+    
+      <google-codelab-step label="ANTES DE EMPEZAR" duration="2">
+        <h2 is-upgraded>SABER QUE BIOS TENEMOS </h2>
+<p>Debemos saber que BIOS tenemos en nuestro ordenador. Para ello ya sabremos que modelo de ordenador tenemos, en este caso tenemos <code>Acer Aspire ES1-512</code>.  <br>  Para entrar en la BIOS en nuestro caso es el <code>F2</code> y en la parte superior nos sale el nombre de la BIOS.  <br>  Nuestra BIOS tiene de fabricante a <a href="https://www.insyde.com/" target="_blank">INSYDE</a>, aunque la marca de nuestro ordenador sea <code>Acer</code>, digamos que la BIOS que tiene montada nuestro ordenador no la crean la propia marca del ordenador sino que es de otra empresa que se dedica a ello.  <br></p>
+<p class="image-container"><img alt="Insyde-H20-Bios" src="img\\162512e8e4c75eb7.png">    </p>
+<h3 is-upgraded>MANUAL DE LA BIOS </h3>
+<p><a href="/PROYECTOS/DOCUMENTOS/bios_insyde_gharial_01.pdf" target="_blank"><paper-button class="colored" raised>MANUAL DE LA BIOS</paper-button></a>  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="ACTUALIZAR LA BIOS" duration="5">
+        <h2 is-upgraded>CÓMO ACTUALIZAR LA BIOS </h2>
+<p><a href="https://www.youtube.com/watch?v=GYfDgDfXhLY" target="_blank"><img alt="ACTUALIZACIÓN DE BIOS" src="img\\d2733e0105b01dd7.png"></a>  </p>
+<aside class="warning"><p> Recuerda que debes seguir las instrucciones del <code>Video</code>, ya que una mala actualización de la BIOS nos podría dejar el ordenador inservible. </p>
+</aside>
+<p>  Nuestra BIOS siempre tiene una versión en la cual se creó el ordenador, pero mucho no toma en cuenta la actualización de la BIOS, ya que se puede encontrar vulnerabilidad a lo largo del tiempo y el propio fabricante da la opción mediante un programa o un archivo la actualización de ella.  En este caso se ha tenido actualizar la BIOS de nuestro Ordenador con la herramienta que nos proporciona la marca <code>Acer</code>.    </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\109ec7c3145247f5.jpeg">  </p>
+<h3 is-upgraded>HERRAMIENTA </h3>
+<p><a href="https://www.acer.com/ac/es/ES/content/support-product/5611?b=1&pn=NX.MRWEB.003&sn=NXMRWEB003450183656600" target="_blank"><paper-button class="colored" raised>DESCARGAR LA HERRAMIENTA</paper-button></a>  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="DESACTIVAR DE LA RED" duration="2">
+        <h2 is-upgraded>FUERA DE LA RED </h2>
+<p> Como vemos hay una opción en la cual se puede hacer boot desde la red, la cual esta opción por defecto esta activa, nos podemos encima de la opción y daremos a la opción <code>Disable</code>.  <br>  También observamos que existe una opción llamada <code>Wake on LAN</code> pero esa opción por defecto viene <code>Disable</code>, que desactiva el controlador LAN.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\cc2bbfca97bb6563.jpeg">  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="DESACTIVAR ARRANQUE DE BOOT" duration="2">
+        <h2 is-upgraded>QUITAR LA OPCIÓN <code>F12</code></h2>
+<p> En este apartado podemos desactivar el <code>F12</code>, ya que por defecto esta activado y se podría usar un USB con un Sistema Operativo de instalación u otros programas que podría sacar nuestra información del disco de nuestro ordenador.  <br>  La opción viene <code>Enable</code> y vamos a la opción y daremos a la opción <code>Disable</code>.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\142808474d860d40.jpeg">  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="PROTEGER LA BIOS CON CONTRASEÑAS" duration="10">
+        <h2 is-upgraded>CONTRASEÑA PARA SER PROTEGIDOS </h2>
+<p> En este paso vamos a poner contraseña para proteger la BIOS y tenemos las siguientes opciones <code>Set Supervidor Password</code>, <code>Set User Password</code>, <code>Set HDD Password</code> y también tenemos una opción que siempre que encienda el ordenador tenga poner la contraseña ante de iniciar.  <br>  Cuando pongamos la contraseña de supervisor en la opción <code>Password on Boot</code>, pondremos la opción <code>Enable</code>.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\622d109d2bd5adf6.jpeg">  </p>
+<h2 is-upgraded>CONTRASEÑA SUPERVISOR Y USUARIO </h2>
+<p> Pondremos la contraseña para <code>Set Supervisor Password</code>, esta contraseña ya depende el usuario o administrador que este configurando el ordenador.  <br>  Para la opción <code>Set User Password</code>, es de la misma manera y dependerá del usuario o administrador.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\46440e38b8b6ed6b.jpeg">  </p>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\1cb5d9aa9559f20b.jpeg">  </p>
+<h2 is-upgraded>CONTRASEÑA PARA EL DISCO </h2>
+<p> En este paso pondremos poner contraseña, con la opción <code>Set HDD Password</code> y se pondrá la contraseña tanto el usuario como el administrador que lo este configuración.  <br>  Una vez se inicie, se pedirá poner la contraseña en el disco en la cual tenemos el sistema instalado.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\e54c064cf7012bc9.jpeg">  </p>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\900a0443be09bd13.jpeg">  </p>
+<aside class="warning"><p> Como se observa, cuando inicia se ve los discos que tengo en mi ordenador. Uno está bloqueado ‘El que tiene el sistema&#39; y el otro es un disco de datos. El fallo que veo en esta seguridad que se puede entrar al disco o formatear el disco ‘Datos&#39; y podría sacar información en él, no se ve ninguna manera en la cual se pueda bloquear los dos discos. </p>
+</aside>
+<h2 is-upgraded>TODOS LOS CAMBIOS APLICADOS </h2>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\a78feb588613ce8.jpeg">  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="PRIORIDADES DE ARRANQUE" duration="2">
+        <h2 is-upgraded>ARRANQUE </h2>
+<p> En esta opción no se puede hacer mucho simplemente mover las prioridades de arranque. En la opción <code>UEFI</code> si deja bloquear el BOOT pero en nuestro caso solo podemos poner <code>Legacy</code> ya que detecta el Sistema Operativo del Disco.  </p>
+<aside class="special"><p> En este apartado esta en modo <code>Legacy</code> ya que es el recomienda si se va usar un Sistema Operativo de Windows, y se tiene poner en este modo ya que si no el ordenador no detecta el disco, al poner el modo <code>UEFI</code> despliega otra opciones para la seguirdad pero al poner ese modo dejaría nuestro ordenador inservible y en nuestro caso nos interesa que el ordenador este siempre operativo. </p>
+</aside>
+<p>  Una vez terminados todos los cambios se le dará <code>F10</code> y se guardara la configuración realizada.    </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\94fb1d76ce73e3de.jpeg">  </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SALTARSE LA SEGURIDAD" duration="5">
+        <h2 is-upgraded>¿COMO SE PUEDE SALTAR LA SEGURIDAD? </h2>
+<p> Existe una forma en la cual se puede saltar la seguridad de nuestro ordenador, en este caso si nos roba el portátil o tiene acceso a el.  Si no lo ha robado nos puede quitar la <code>PILA</code> la cual alimenta la BIOS y tras pasar unos <code>5/10 minutos</code> la BIOS se resetea.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\d49775bddbf12c34.jpeg">  </p>
+<p> Una vez realizado ese paso al entrar a la BIOS si pulsamos la tecla <code>INTRO</code> al menos <code>3</code> veces saldrá un mensaje en el cual debemos poner un código de supervisor, en la cual ese código dado se puede poner en <a href="https://www.biosbug.com/acer/" target="_blank">BIOSBUG</a> o en <a href="https://bios-pw.org/" target="_blank">BIOS-PW</a>, ponemos los números que nos da nuestra BIOS y pondremos los que nos da la pagina y una vez ponemos los números dados por la pagina y ya estaría como supervisor con lo cual nos puede quitar la contraseña y dejarlo por defecto la BIOS.  </p>
+<h3 is-upgraded>EJEMPLO </h3>
+<p class="image-container"><img alt="EJEMPLO DEMOSTRATIVO" src="img\\a6adf027ad2d3165.jpeg"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="codelab-elements/native-shim.js"></script>
+  <script src="codelab-elements/custom-elements.min.js"></script>
+  <script src="codelab-elements/prettify.js"></script>
+  <script src="codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
