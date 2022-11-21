@@ -19,5 +19,7 @@
 ### PROYECTOS
 
 > [BIOS SEGURO](https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/BASTIONADO/PROYECTOS/VISUAL/proyectos-BIOS/)
->
+
+<br>
+
 > [GRUB SEGURO](https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/BASTIONADO/PROYECTOS/VISUAL/proyectos-GRUB/)
