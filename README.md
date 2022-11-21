@@ -14,3 +14,8 @@
 ### PROYECTOS
 
 > [PROYECTO 01](https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/HACKING_ETICO/P.01_G2_HE.html)
+
+## BASTIONADO
+### PROYECTOS
+> [BIOS SEGURO](https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/BASTIONADO/PROYECTOS/VISUAL/proyectos-BIOS/)
+> [GRUB SEGURO](https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/BASTIONADO/PROYECTOS/VISUAL/proyectos-GRUB/)
