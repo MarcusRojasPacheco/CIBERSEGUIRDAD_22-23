@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-12-12T02:04:25+01:00",
+  "id": "VPN WIREGUARD",
+  "duration": 16,
+  "title": "CONFIGURACIÓN VPN - SITE TO SITE [WIREGUARD]",
+  "summary": "SITE TO SITE WIREGUARD",
+  "source": ".\\VPN.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/MarcusRojasPacheco",
+  "url": "VPN WIREGUARD"
+}

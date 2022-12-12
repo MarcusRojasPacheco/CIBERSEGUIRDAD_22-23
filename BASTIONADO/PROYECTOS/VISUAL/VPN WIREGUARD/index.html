@@ -1,0 +1,124 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>CONFIGURACIÓN VPN - SITE TO SITE [WIREGUARD]</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="VPN WIREGUARD"
+                  title="CONFIGURACIÓN VPN - SITE TO SITE [WIREGUARD]"
+                  environment="web"
+                  feedback-link="https://github.com/MarcusRojasPacheco">
+    
+      <google-codelab-step label="ANTES DE EMPEZAR" duration="2">
+        <h2 is-upgraded>CONFIGURACIÓN DE PFSENSE - TERMINAL </h2>
+<p>Antes de empezar vamos a configurar la IP de la interfaz LAN, ya que una vez iniciado pfsense da una IP por defecto. Tenemos que tener encuenta la dirección IP que nos ha dado la <code>WAN</code> que seria nuestra <code>IP PUBLICA</code>.  <br></p>
+<aside class="warning"><p class="image-container"><img alt="PFSENSE" src="img\\6927a6e374da8053.PNG"></p>
+</aside>
+<p>  En este caso tendria en la <code>WAN</code> seria la IP - <code>192.168.1.108/24</code>. Y en la <code>LAN</code> seria la IP - <code>192.168.2.1/24</code>    </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CONFIGURAR LAN Y DHCP" duration="0">
+        <h2 is-upgraded>IP ESTATICAS EN LAN </h2>
+<p> Para ello vamos a darle una IP a la <code>LAN</code>, daremos a la opción <code>2</code>, y señalamos la interfaz <code>2</code>. <br></p>
+<aside class="warning"><p class="image-container"><img alt="CONFIGURACIÓN LAN" src="img\\ed85ab0c6a203b26.PNG"></p>
+</aside>
+<p> Asignaremos una IP a nuestra interfaz y añadir la mascara que tendra nuestra IP.  <br></p>
+<aside class="warning"><p class="image-container"><img alt="IP LAN" src="img\\d44794a479b0f70a.PNG"></p>
+</aside>
+<aside class="special"><h3 is-upgraded><strong>NOTA</strong></h3>
+<p>Coger siempre este mismo rango: 0.0.0.11 a 0.0.0.21 (Reservar la 1 y la 10. La primera para la interfaz del PFSense y la otra para la interfaz del Wireguard) </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CONFIGURACIÓN DHCP" duration="2">
+        <h2 is-upgraded>DHCP DENTRO DE PFSENSE </h2>
+<p> Ahora vamos a decir que si queremos un <code>DHCP</code>. Decimos el rango que va tener nuestro <code>DHCP</code> y nos dira que IP tiene ahora nuestro <code>sitio web</code> de <code>pfsense</code>, para poder configurarla mas adelante.  <br></p>
+<aside class="warning"><p class="image-container"><img alt="CONFIGURACIÓN LAN" src="img\\60ad1afee833c00b.PNG"></p>
+</aside>
+<p>  Ahora dentro de la interfaz de <code>pfsense</code> y vamos a reservar la IP a nuestro <code>WireGuard</code>, para ello vamos a <code>SERVICE > DHCP SERVER > LAN</code> y daremos a <code>DHCP STATIC MAPPING FOR THIS INTERFACE</code>. <br> Añadimos la IP que queremos en nuestro servidor <code>WireGuard</code>, para ello pondremos la <code>MAC</code> de nuestro <code>WireGuard</code> y la IP que vamos a poner a nuestro servidor.  <br></p>
+<aside class="warning"><p class="image-container"><img alt="CONFIGURACIÓN LAN" src="img\\79814ed62fd33c6e.PNG"></p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="PUERTA DE ENLACE" duration="5">
+        <h2 is-upgraded>GATEWAY </h2>
+<p> Vamos a irnos a <code>SYSTEM > ROUTING > GATEWAY</code> y vamos añadir un nuevo <code>GATEWAYS</code>. <br></p>
+<aside class="warning"><p class="image-container"><img alt="CONFIGURACIÓN LAN" src="img\\1a3b03f4dc95afff.PNG"></p>
+</aside>
+<p>  Ahora vamos a <code>SYSTEM > ROUTING > STATIC ROUTES</code> y vamos añadir la IP de nuestro <code>WireGuard</code> y el rango IP del otro <code>SERVIDOR WIREGUARD</code>. <br></p>
+<aside class="warning"><p class="image-container"><img alt="CONFIGURACIÓN LAN" src="img\\f31da86082b6e38d.PNG"></p>
+</aside>
+<p>  Y con todo esto el tráfico que vaya hacia la red contraria, que se redirija a la puerta de enlace que configuramos anteriormente.    </p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="FIREWALL" duration="2">
+        <h2 is-upgraded>CONFIGURAR FIREWALL </h2>
+<p> Ahora vamos a configurar el FireWall para que deje paso con los <code>PUERTOS ASIGNADOS</code> y sabiendo la <code>IP PUBLICA</code> que fue asignada.  </p>
+<aside class="special"><p><strong>INTERFACE</strong> - WAN <br><strong>PROTOCOL</strong> - TCP <br><strong>DESTINATION PORT RANGE</strong> - DE 51820 HASTA 51820 <br><strong>REDIRECT TARGET IP</strong> - 192.168.2.10 [IP ASIGNADA POR EL DHCP LAN] <br><strong>REDIRECT TARGET PORT</strong> - 51821 </p>
+</aside>
+<aside class="warning"><p class="image-container"><img alt="CONFIGURACIÓN LAN" src="img\\75506b8b6e74a216.PNG"></p>
+</aside>
+<p>  Con todo esta configuración tenemos el <code>FireWall</code> y el <code>Pfsense</code> listo para que se pueda hacer la <code>VPN</code> sin problema. <br>  Antes de terminar con el <code>Pfsense</code> vamos a <code>INTERFACES > WAN</code> y desmarcaremos lo marcado en <code>RESERVED NETWORKS</code><br></p>
+<aside class="warning"><p class="image-container"><img alt="CONFIGURACIÓN LAN" src="img\\8c1db787b87216be.PNG"></p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="WIREGUARD" duration="5">
+        <h2 is-upgraded>PROGRAMAS NECESARIOS </h2>
+<p> Antes de empezar vamos a empezar a configurar debemos actualizar el sistema con el siguietes comando <code>sudo apt update && sudo apt upgrade</code>.  <br>  Vamos a instalar IpTables y Traceroute.  <br>  </p>
+<ul>
+<li><code>sudo apt install iptables</code> - Esto lo introduciremos en la configuración del Wireguard para que nos permita el paso de paquetes mediante un <code>Masquerade</code>. <br>  </li>
+<li><code>sudo apt install traceroute</code> - Esto nos ayudará a ver las trazas de conexión en caso de fallo. <br>  Ahora vamos a instalar WireGuard <code>sudo apt install wireguard</code>. <br>  Ahora vamos a crear la carpera donde ira el <code>WireGuard</code>, para ello ponemos el siguiente comando <code>mkdir -p /etc/wireguard/keys</code>. <br>  Con todo esto ya estaria en la parte de instalación de todo lo necesario para poder hacer la configuración del <code>WireGuard</code>.    <h2 is-upgraded>CONFIGURACIÓN WIREGUARD </h2>
+   Ahora vamos a crear las claves <code>privada</code> y <code>publica</code> del <code>WireGuard</code>. <br>  Con este comando vamos a crear la clave privada <code>wg genkey > host-priv.key</code> y creamos la clave publica <code>wg pubkey < host-priv.key > host-pub.key</code>. <br>  Una vez creada las claves vamos a crear el archivo de configuración para el WireGuard, <code>nano /etc/wireguard/wg0.conf</code>. <br><aside class="warning"><p>Local settings for Localhost** </p>
+<p> [Interface] <br> PrivateKey = (ClavePrivadaGeneradaEnEsteWireGuard) <br> Address = (Dirección IP Túnel Propio) PONER MÁSCARA <br> ListenPort = (Puerto de Escucha, normalmente el 51821) <br> PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o (Interfaz Wireguard que da a la LAN) -j MASQUERADE <br> PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o (Interfaz Wireguard que da a la LAN) -j MASQUERADE <br> SaveConfig = true <br><strong># IP Forwarding<br></strong> PreUp = sysctl -w net.ipv4.ip_forward=1 <br><strong># Remote settings for Host Izquierda o Derecha<br></strong> [Peer] <br> PublicKey = (ClavePúblicaGeneradaEnElOtroWireguard) <br> Endpoint = (Dirección IP de la boca que da a internet del router de la red contraria):(Puerto de Escucha, normalmente el 51820) <br> AllowedIPs = (Dirección de red de la red contraria) PONER MÁSCARA y si quieres poner más de una dirección IP, sepárala de la anterior con una coma. </p>
+</aside>
+  Ahora con esta configuración ya funcionaria nuestra VPN. <br><aside class="special"><h3 is-upgraded><strong>NOTA</strong></h3>
+<p>Aquí puedes poner también la dirección IP de la boca contraria del túnel para ver si hacen &#34;Ping&#34; entre ellas. </p>
+</aside>
+  Ahora solo falta comprobarlo.  <br><aside class="special"><h3 is-upgraded><strong>COMANDOS</strong></h3>
+<p><code>wg-quick up wg0</code> - Levantar la configuración <br><code>wg show wg0</code> - Comprobar el &#34;Handshake&#34; <br><code>wg-quick down wg0</code> -  Tirar la configuración </p>
+</aside>
+<br>  Ahora con toda solo es hacer lo mismo pero en el otro WireGuard</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
