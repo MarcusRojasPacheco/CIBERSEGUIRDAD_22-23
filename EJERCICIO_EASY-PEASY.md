@@ -71,7 +71,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 **CAPTURA DEL RESULTADO EN LA TERMINAL**
 
 [PONER FOTO]
-[!IMAGEN](/assets/img/INCIDENCIA/CAP_01.PNG)
+
+![IMAGEN](/assets/img/INCIDENCIA/CAP_01.PNG)
 
 Con Estos resultados vamos a responder las Preguntas anteriormente realizada.
 
@@ -86,7 +87,7 @@ Con lo que vemos que hay **3 puertos** abiertos con lo cual son
 - Usando GoBuster, encuentre la bandera 1.
 
 ```bash
-RESPUESTa
+RESPUESTA
 ```
 
 **GoBuster**
