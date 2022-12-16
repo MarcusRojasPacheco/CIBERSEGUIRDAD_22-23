@@ -70,7 +70,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 **CAPTURA DEL RESULTADO EN LA TERMINAL**
 
-![NMAP](/assets/img/HACKER%20ETICO/EASYPEASY/NMAP.PNG)
+![NMAP](/assets/img/INCIDENCIA/CONTROLES.png)
 
 Con Estos resultados vamos a responder las Preguntas anteriormente realizada.
 
@@ -126,9 +126,9 @@ Progress: 220533 / 220561 (99.99%)
 
 **CAPTURA DEL RESULTADO EN LA TERMINAL**
 
-[FOTOS DE LA TERMINAL]
+![GoBuster](/assets/img/HACKER_ETICO/EASYPEASY/GoBuster001.PNG)
 
-Vemos que tenemos un directorio oculto para poder revisar, con lo que vamos a revisar el fichero robots.txt con lo que vamos a mirarlo si son los mismo
+Vemos que existe un directorio llamado **hidden**. Puede echar un vistazo, pero no hay nada en ella.
 
 [FOTO WEB]
 
