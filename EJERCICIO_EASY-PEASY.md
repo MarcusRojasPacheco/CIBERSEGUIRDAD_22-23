@@ -77,3 +77,57 @@ Con lo que vemos que hay **3 puertos** abiertos con lo cual son
 - **80 / http-nginx 1.16.1** : Tiene un Servidor web nginx
 - **6498 / ssh-OpenSSH 7.6p1** : Tiene un servicio SSH
 - **65524 / http-Apache http 2.4.43** : Tiene un servidor Apache
+
+## Tarea 2 - Comprometer la máquina
+
+- Usando GoBuster, encuentre la bandera 1.
+
+```bash
+RESPUESTa
+```
+
+**GoBuster**
+
+Con esta herramienta nos ayudara a buscar directorios ocultos.
+
+```bash
+gobuster dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -q -x html,txt,py,sh,js,css,phtml,php,json -o <Salida.txt>
+```
+
+- -u : URL de la Web Objetivo
+- -w : El diccionario que vamos a usar
+- -q : Exploración Silenciosa
+- -x : Busca las exteciones que puede tiener una web tipica.
+- -o : Salida para almacenar en el directorio
+
+[SALIDA DE COMANDO]
+
+[FOTOS DE LA TERMINAL]
+
+Vemos que tenemos un directorio oculto para poder revisar, con lo que vamos a revisar el fichero robots.txt con lo que vamos a mirarlo si son los mismo
+
+[FOTO WEB]
+
+Vemos que los directorios ocultos que son los mismo que **GoBuster**.
+
+[FOTO FUENTE WEB]
+
+Vemos  que el codigo fuentes que no vemos nada interesante o no vemos ningun comentario oculto en el.
+
+[FOTO GOBUSTER DE NUEVO]
+
+Como vemos ahora enn **GoBuster** existe directorios ocultos.
+
+Ahora vamos a la dirección oculta.
+
+[FOTO DIR OCULTO]
+
+Vemos el codigo fuente de la web, en la cual tiene un mensaje oculto que es flag que tenemos que resolver.
+
+```bash
+echo "CODIGO EN BASE64" | base64 -d
+```
+
+Con el codigo dado responde a la primera pregunta de la actividad.
+
+---
