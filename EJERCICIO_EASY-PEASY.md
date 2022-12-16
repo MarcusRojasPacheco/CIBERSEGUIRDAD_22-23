@@ -15,17 +15,17 @@ Una Vez dentro de la carpeta podemos realizar la actividad.
 Ahora nos debera salir algunas preguntas en el cual deberemos responder usando el **Nmap**
 
 - ¿Cuántos puertos están abierto?
-
-| 3 |
-| --- |
+```bash
+3
+```
 - ¿Cuál es la versión de nginx?
-
-| 1.16.1 |
-| --- |
+```bash
+1.16.1
+```
 - ¿Qué se está ejecutando en el puerto más alto?
-
-| Tiene Buscar que puerto es el mayor y ya sabe que servicio es |
-| --- |
+```bash
+Tiene Buscar que puerto es el mayor y ya sabe que servicio es
+```
 
 Ahora vamos a usar el **Nmap** con los siguientes parametros
 
