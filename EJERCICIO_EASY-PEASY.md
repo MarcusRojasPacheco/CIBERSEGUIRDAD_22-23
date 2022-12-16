@@ -1,7 +1,7 @@
+[VOLVER PAGINA PRINCIPAL](./)
+
 # Easy Peasy - WriteUp
 ## Creamos la carpeta donde estara nuestra maquina para realizar la prueba
-
-[VOLVER PAGINA PRINCIPAL](./)
 
 Creamos un directorio llamado **easy-peasy** y nos meteremos a el.
 
