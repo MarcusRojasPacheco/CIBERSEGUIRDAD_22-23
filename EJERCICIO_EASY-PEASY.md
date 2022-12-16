@@ -85,7 +85,7 @@ Con lo que vemos que hay **3 puertos** abiertos con lo cual son
 ### Usando GoBuster, encuentre la bandera 1.
 
 ```bash
-flag{f1$$$$$$$$$$$$$$$}  
+flag{f1######################}  
 ```
 
 **GoBuster**
@@ -148,7 +148,7 @@ Vemos ahora las direciones oculta de **Hidden** y veremos que encuentra una llam
 Gobuster v3.3
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ===============================================================
-[+] Url:                     http://10.10.134.61/hidden/
+[+] Url:                     http://10.10.134.61:65524/
 [+] Method:                  GET
 [+] Threads:                 10
 [+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
@@ -157,13 +157,14 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 [+] Expanded:                true
 [+] Timeout:                 10s
 ===============================================================
-2022/12/16 18:02:41 Starting gobuster in directory enumeration mode
+2022/12/16 18:29:28 Starting gobuster in directory enumeration mode
 ===============================================================
-http://10.10.134.61/hidden/whatever             (Status: 301) [Size: 169] [--> http://10.10.134.61/hidden/whatever/]
-Progress: 220522 / 220561 (99.98%)
+http://10.10.134.61:65524/server-status        (Status: 403) [Size: 280]
+Progress: 220538 / 220561 (99.99%)
 ===============================================================
-2022/12/16 18:22:38 Finished
+2022/12/16 18:50:07 Finished
 ===============================================================
+
 ```
 
 **CAPTURA DEL RESULTADO EN LA TERMINAL**
@@ -185,6 +186,10 @@ Con el codigo dado responde a la primera pregunta de la actividad.
 ---
 
 ### Enumere aún más la máquina, ¿qué es la bandera 2?
+
+```bash
+flag{1m_######################}
+```
 
 Para ello vamos al servicio **APACHE** que esta en el puerto **65524** y vamos a ver **robots.txt** con lo cual vemos la primer codigo, pero tendremos que Hash es.
 
@@ -213,7 +218,7 @@ Possible Hashs:
 [+] Domain Cached Credentials - MD4(MD4(($pass)).(strtolower($username)))
 ```
 
-Con esta herramienta nos identifica que Hash se ha utilizado, con lo cual vamos usar un decodificador 
+Con esta herramienta nos identifica que Hash se ha utilizado, con lo cual vamos usar un decodificador web.
 
 
 [VOLVER PAGINA PRINCIPAL](./)
