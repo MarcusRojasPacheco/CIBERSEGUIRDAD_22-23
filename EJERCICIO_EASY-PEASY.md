@@ -71,6 +71,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 **CAPTURA DEL RESULTADO EN LA TERMINAL**
 
 [PONER FOTO]
+[!IMAGEN](/assets/img/INCIDENCIA/CAP_01.PNG)
 
 Con Estos resultados vamos a responder las Preguntas anteriormente realizada.
 
