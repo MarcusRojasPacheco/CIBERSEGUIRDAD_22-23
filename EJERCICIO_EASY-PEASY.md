@@ -46,7 +46,7 @@ nmap -sC -sV -p- -oN Puertos.txt <IP_OBJETIVO>
 **Salida del comando**
 
 ```bash
-Nmap scan report for 10.10.67.60
+Nmap scan report for 10.10.17.119
 Host is up (0.063s latency).
 Not shown: 65532 closed tcp ports (reset)
 PORT      STATE SERVICE VERSION
@@ -72,7 +72,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 [PONER FOTO]
 
-![IMAGEN](/assets/img/INCIDENCIA/CAP_01.PNG)
+![IMAGEN](/assets/img/HACKER%20ETICO/EASYPEASY/001.PNG)
 
 Con Estos resultados vamos a responder las Preguntas anteriormente realizada.
 
@@ -104,7 +104,9 @@ gobuster -q -e .php,.html,.txt dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o 
 - -e : Para las extenciones de .php .html. txt.
 - -o : Salida para almacenar en el directorio
 
-[SALIDA DE COMANDO]
+```bash
+gobuster -q -e .php,.html,.txt dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt>
+```
 
 [FOTOS DE LA TERMINAL]
 
