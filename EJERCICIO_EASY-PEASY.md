@@ -249,4 +249,28 @@ Ahora vamos a usar una pagina web que nos va ayudar a decodificar lo que hemos o
 
 ![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/WEB_006.PNG)
 
+### Usando la lista de palabras que se le proporcionó en esta tarea, descifre el hash, ¿cuál es la contraseña?
+
+```bash
+myp##################
+```
+
+```bash
+john --wordlist=easypeasy.txt --format=GOST <fichero.txt>
+```
+
+**SALIDA DEL COMANDO**
+
+```bash
+Created directory: /root/.john
+Using default input encoding: UTF-8
+Loaded 1 password hash (gost, GOST R 34.11-94 [64/64])
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+myp################## (?)     
+1g 0:00:00:00 DONE (2022-12-16 19:51) 50.00g/s 204800p/s 204800c/s 204800C/s vgazoom4x..flash88
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+```
+
 [VOLVER PAGINA PRINCIPAL](./)
