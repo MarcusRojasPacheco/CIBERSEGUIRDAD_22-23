@@ -128,9 +128,9 @@ Progress: 220533 / 220561 (99.99%)
 
 ![GoBuster](/assets/img/HACKER_ETICO/EASYPEASY/GoBuster001.PNG)
 
-Vemos que existe un directorio llamado **hidden**. Puede echar un vistazo, pero no hay nada en ella.
+Vemos que existe un directorio llamado **hidden**. Ahora podemos ver tanto **robots.txt** y vemos tambien la dirección oculta **/hidden**.
 
-[FOTO WEB]
+![HIDDEN](/assets/img/HACKER_ETICO/EASYPEASY/WEB_001.PNG) ![NORMAL](/assets/img/HACKER_ETICO/EASYPEASY/WEB_002.PNG)
 
 Vemos que los directorios ocultos que son los mismo que **GoBuster**.
 
