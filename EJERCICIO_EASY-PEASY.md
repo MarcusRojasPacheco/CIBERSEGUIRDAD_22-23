@@ -95,17 +95,16 @@ RESPUESTA
 Con esta herramienta nos ayudara a buscar directorios ocultos.
 
 ```bash
-gobuster -q -e .php,.html,.txt dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt>
+gobuster dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt> -e .php,.html,.txt
 ```
 
 - -u : URL de la Web Objetivo
 - -w : El diccionario que vamos a usar
-- -q : Exploración Silenciosa
 - -e : Para las extenciones de .php .html. txt.
 - -o : Salida para almacenar en el directorio
 
 ```bash
-gobuster -q -e .php,.html,.txt dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt>
+gobuster -e .php,.html,.txt dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt>
 ```
 
 [FOTOS DE LA TERMINAL]
