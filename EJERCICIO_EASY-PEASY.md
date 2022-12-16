@@ -70,7 +70,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 **CAPTURA DEL RESULTADO EN LA TERMINAL**
 
-![IMAGEN](/assets/img/HACKER%20ETICO/EASYPEASY/001.PNG)
+![IMAGEN](/assets/img/HACKER%20ETICO/EASYPEASY/NMAP.PNG)
 
 Con Estos resultados vamos a responder las Preguntas anteriormente realizada.
 
