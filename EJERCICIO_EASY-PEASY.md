@@ -186,5 +186,34 @@ Con el codigo dado responde a la primera pregunta de la actividad.
 
 ### Enumere aún más la máquina, ¿qué es la bandera 2?
 
+Para ello vamos al servicio **APACHE** que esta en el puerto **65524** y vamos a ver **robots.txt** con lo cual vemos la primer codigo, pero tendremos que Hash es.
+
+```bash
+hash-identifier <HASH>
+```
+**SALIDA DEL COMANDO**
+
+```bash
+   #########################################################################
+   #     __  __                     __           ______    _____           #
+   #    /\ \/\ \                   /\ \         /\__  _\  /\  _ `\         #
+   #    \ \ \_\ \     __      ____ \ \ \___     \/_/\ \/  \ \ \/\ \        #
+   #     \ \  _  \  /'__`\   / ,__\ \ \  _ `\      \ \ \   \ \ \ \ \       #
+   #      \ \ \ \ \/\ \_\ \_/\__, `\ \ \ \ \ \      \_\ \__ \ \ \_\ \      #
+   #       \ \_\ \_\ \___ \_\/\____/  \ \_\ \_\     /\_____\ \ \____/      #
+   #        \/_/\/_/\/__/\/_/\/___/    \/_/\/_/     \/_____/  \/___/  v1.2 #
+   #                                                             By Zion3R #
+   #                                                    www.Blackploit.com #
+   #                                                   Root@Blackploit.com #
+   #########################################################################
+--------------------------------------------------
+
+Possible Hashs:
+[+] MD5
+[+] Domain Cached Credentials - MD4(MD4(($pass)).(strtolower($username)))
+```
+
+Con esta herramienta nos identifica que Hash se ha utilizado, con lo cual vamos usar un decodificador 
+
 
 [VOLVER PAGINA PRINCIPAL](./)
