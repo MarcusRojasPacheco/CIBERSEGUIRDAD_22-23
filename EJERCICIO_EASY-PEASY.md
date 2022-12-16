@@ -102,7 +102,21 @@ gobuster dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt> -e .php,.
 - -o : Salida para almacenar en el directorio
 
 ```bash
-gobuster -e .php,.html,.txt dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt>
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.17.119
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Expanded:                true
+[+] Timeout:                 10s
+===============================================================
+2022/12/16 16:58:22 Starting gobuster in directory enumeration mode
+===============================================================
 ```
 
 [FOTOS DE LA TERMINAL]
