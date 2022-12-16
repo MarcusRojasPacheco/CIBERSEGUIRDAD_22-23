@@ -93,13 +93,12 @@ RESPUESTA
 Con esta herramienta nos ayudara a buscar directorios ocultos.
 
 ```bash
-gobuster dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -o <Salida.txt> -e .php,.html,.txt
+gobuster dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -e .php,.html,.txt
 ```
 
 - -u : URL de la Web Objetivo
 - -w : El diccionario que vamos a usar
 - -e : Para las extenciones de .php .html. txt.
-- -o : Salida para almacenar en el directorio
 
 ```bash
 ===============================================================
@@ -130,9 +129,13 @@ Progress: 220533 / 220561 (99.99%)
 
 Vemos que existe un directorio llamado **hidden**. Ahora podemos ver tanto **robots.txt** y vemos tambien la dirección oculta **/hidden**.
 
-![HIDDEN](/assets/img/HACKER_ETICO/EASYPEASY/WEB_001.PNG) ![NORMAL](/assets/img/HACKER_ETICO/EASYPEASY/WEB_002.PNG)
+**ROBOTS.txt**
+![NORMAL](/assets/img/HACKER_ETICO/EASYPEASY/WEB_002.PNG)
 
-Vemos que los directorios ocultos que son los mismo que **GoBuster**.
+**/Hidden**
+![HIDDEN](/assets/img/HACKER_ETICO/EASYPEASY/WEB_001.PNG) 
+
+Vemos ahora las direciones oculta de **Hidden** y veremos que encuentra una llamada **whatever** y en la cual veremos 
 
 [FOTO FUENTE WEB]
 
