@@ -235,6 +235,18 @@ Esta flag fue facil de encontrar, ya que solo estaba en unos de los texto de la 
 
 ---
 
-### Rompe el hash con easypeasy.txt, ¿Cuál es la bandera 3?
+### ¿Qué es el directorio oculto?
+
+```bash
+flag{/n0t###################}
+```
+
+Ahora vamos a ver el codigo fuente de la pagina web de apache.
+
+![DECODE](/assets/img/HACKER_ETICO/EASYPEASY/WEB_005.PNG)
+
+Ahora vamos a usar una pagina web que nos va ayudar a decodificar lo que hemos obtenidos en el anterior apartado.
+
+![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/WEB_006.PNG)
 
 [VOLVER PAGINA PRINCIPAL](./)
