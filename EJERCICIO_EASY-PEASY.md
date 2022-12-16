@@ -43,7 +43,7 @@ nmap -sC -sV -p- -oN Puertos.txt <IP_OBJETIVO>
 - -oN : La salida donde se almacenara el resultado del comando
 - -p- : Todos los puertos para escanear
 
-**Salida del comando**
+**SALIDA DEL COMANDO**
 
 ```bash
 Nmap scan report for 10.10.17.119
@@ -82,10 +82,10 @@ Con lo que vemos que hay **3 puertos** abiertos con lo cual son
 
 ## Tarea 2 - Comprometer la máquina
 
-- Usando GoBuster, encuentre la bandera 1.
+### Usando GoBuster, encuentre la bandera 1.
 
 ```bash
-RESPUESTA
+flag{f1$$$$$$$$$$$$$$$}  
 ```
 
 **GoBuster**
@@ -99,6 +99,8 @@ gobuster dir -u http://><IP_OBJETIVO> -w <DICCIONARIO> -e .php,.html,.txt
 - -u : URL de la Web Objetivo
 - -w : El diccionario que vamos a usar
 - -e : Para las extenciones de .php .html. txt.
+
+**SALIDA DEL COMANDO**
 
 ```bash
 ===============================================================
@@ -130,26 +132,49 @@ Progress: 220533 / 220561 (99.99%)
 Vemos que existe un directorio llamado **hidden**. Ahora podemos ver tanto **robots.txt** y vemos tambien la dirección oculta **/hidden**.
 
 **ROBOTS.txt**
+
 ![NORMAL](/assets/img/HACKER_ETICO/EASYPEASY/WEB_002.PNG)
 
 **/Hidden**
+
 ![HIDDEN](/assets/img/HACKER_ETICO/EASYPEASY/WEB_001.PNG) 
 
-Vemos ahora las direciones oculta de **Hidden** y veremos que encuentra una llamada **whatever** y en la cual veremos 
+Vemos ahora las direciones oculta de **Hidden** y veremos que encuentra una llamada **whatever** con lo cual vamos a usar el **GoBuster**
 
-[FOTO FUENTE WEB]
+**SALIDA DEL COMANDO**
 
-Vemos  que el codigo fuentes que no vemos nada interesante o no vemos ningun comentario oculto en el.
+```bash
+===============================================================
+Gobuster v3.3
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.134.61/hidden/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.3
+[+] Expanded:                true
+[+] Timeout:                 10s
+===============================================================
+2022/12/16 18:02:41 Starting gobuster in directory enumeration mode
+===============================================================
+http://10.10.134.61/hidden/whatever             (Status: 301) [Size: 169] [--> http://10.10.134.61/hidden/whatever/]
+Progress: 220522 / 220561 (99.98%)
+===============================================================
+2022/12/16 18:22:38 Finished
+===============================================================
+```
 
-[FOTO GOBUSTER DE NUEVO]
+**CAPTURA DEL RESULTADO EN LA TERMINAL**
 
-Como vemos ahora enn **GoBuster** existe directorios ocultos.
+![GoBuster](/assets/img/HACKER_ETICO/EASYPEASY/GoBuster002.PNG)
 
-Ahora vamos a la dirección oculta.
+Una vez dentro de **whatever** vemos el codigo fuente de esa pagina.
 
-[FOTO DIR OCULTO]
+![WhatEver](/assets/img/HACKER_ETICO/EASYPEASY/WEB_003.PNG)
 
-Vemos el codigo fuente de la web, en la cual tiene un mensaje oculto que es flag que tenemos que resolver.
+Estara el codigo en **Base64**, con lo cual tenemos que decodificarla.
 
 ```bash
 echo "CODIGO EN BASE64" | base64 -d
@@ -158,6 +183,8 @@ echo "CODIGO EN BASE64" | base64 -d
 Con el codigo dado responde a la primera pregunta de la actividad.
 
 ---
+
+### Enumere aún más la máquina, ¿qué es la bandera 2?
 
 
 [VOLVER PAGINA PRINCIPAL](./)
