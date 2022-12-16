@@ -15,14 +15,17 @@ Una Vez dentro de la carpeta podemos realizar la actividad.
 Ahora nos debera salir algunas preguntas en el cual deberemos responder usando el **Nmap**
 
 - ¿Cuántos puertos están abierto?
+
 ```bash
 3
 ```
 - ¿Cuál es la versión de nginx?
+
 ```bash
 1.16.1
 ```
 - ¿Qué se está ejecutando en el puerto más alto?
+
 ```bash
 Tiene Buscar que puerto es el mayor y ya sabe que servicio es
 ```
@@ -74,4 +77,3 @@ Con lo que vemos que hay **3 puertos** abiertos con lo cual son
 - **80 / http-nginx 1.16.1** : Tiene un Servidor web nginx
 - **6498 / ssh-OpenSSH 7.6p1** : Tiene un servicio SSH
 - **65524 / http-Apache http 2.4.43** : Tiene un servidor Apache
-- **OS detectado - Linux**
