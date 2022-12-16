@@ -220,6 +220,8 @@ Possible Hashs:
 
 Con esta herramienta nos identifica que Hash se ha utilizado, con lo cual vamos usar un decodificador web.
 
+---
+
 ### Rompe el hash con easypeasy.txt, ¿Cuál es la bandera 3?
 
 ```bash
@@ -230,5 +232,9 @@ Esta flag fue facil de encontrar, ya que solo estaba en unos de los texto de la 
 **LA TERCERA BANDERA**
 
 ![Flag3](/assets/img/HACKER_ETICO/EASYPEASY/WEB_004.PNG)
+
+---
+
+### Rompe el hash con easypeasy.txt, ¿Cuál es la bandera 3?
 
 [VOLVER PAGINA PRINCIPAL](./)
