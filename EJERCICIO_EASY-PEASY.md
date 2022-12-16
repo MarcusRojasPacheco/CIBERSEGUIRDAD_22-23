@@ -70,7 +70,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 **CAPTURA DEL RESULTADO EN LA TERMINAL**
 
-![IMAGEN](/assets/img/HACKER%20ETICO/EASYPEASY/NMAP.PNG)
+![NMAP](/assets/img/HACKER%20ETICO/EASYPEASY/NMAP.PNG)
 
 Con Estos resultados vamos a responder las Preguntas anteriormente realizada.
 
@@ -117,7 +117,14 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ===============================================================
 2022/12/16 16:58:22 Starting gobuster in directory enumeration mode
 ===============================================================
+http://10.10.17.119/hidden               (Status: 301) [Size: 169] [--> http://10.10.17.119 hidden/]                                                                                            
+Progress: 220533 / 220561 (99.99%)
+===============================================================
+2022/12/16 17:18:27 Finished
+=============================================================== 
 ```
+
+**CAPTURA DEL RESULTADO EN LA TERMINAL**
 
 [FOTOS DE LA TERMINAL]
 
