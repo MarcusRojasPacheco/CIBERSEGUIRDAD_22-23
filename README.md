@@ -1,10 +1,10 @@
 <!-- https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/EJERCICIO_EASY-PEASY -->
-[![Hola](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/chriskhanhtran/CS224n-NLP-Solutions/tree/master/assignments/)
+
 # CIBERSEGURIDAD
 
 ## INCIDENTES DE SEGURIDAD
 ### PROYECTO
-
+[![Esto solo una foto]](https://github.com/chriskhanhtran/CS224n-NLP-Solutions/tree/master/assignments/)
 > [PROYECTO 02](./INCIDENTES%20DE%20SEGURIDAD/PROYECTOS/PRESENTACION/1.a.0.3_G2.html)
 
 ##  PUESTA EN PRODUCCIÓN
@@ -29,3 +29,5 @@
 > [GRUB SEGURO](./BASTIONADO/PROYECTOS/VISUAL/proyectos-GRUB/)
 >
 > [VPN](./BASTIONADO/PROYECTOS/VISUAL/VPN%20WIREGUARD/)
+
+[def]: https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub
