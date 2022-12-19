@@ -220,6 +220,10 @@ Possible Hashs:
 
 Con esta herramienta nos identifica que Hash se ha utilizado, con lo cual vamos usar un decodificador web.
 
+**DECODIFICADOR WEB**
+
+![Flag2](/assets/img/HACKER_ETICO/EASYPEASY/WEB_007.PNG)
+
 ---
 
 ### Rompe el hash con easypeasy.txt, ¿Cuál es la bandera 3?
@@ -272,5 +276,13 @@ myp################## (?)
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
 ```
+
+### ¿Cuál es la contraseña para iniciar sesión en la máquina a través de SSH?
+
+```bash
+myp##################
+```
+Como vemos en la pagina donde la ruta que nos da [Flag3](#¿qué-es-el-directorio-oculto)
+
 
 [VOLVER PAGINA PRINCIPAL](./)
