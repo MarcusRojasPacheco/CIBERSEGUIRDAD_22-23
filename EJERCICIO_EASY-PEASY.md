@@ -321,9 +321,32 @@ Ahora vamos a convertidor de Binario en Texto ASCII con lo cual seria la passwor
 ### ¿Cuál es el indicador de usuario?
 
 ```bash
-iconver###############
+flag{n0wits33msn0rm4l}
 ```
-Ahora nos vamos a conectar con 
+
+Ahora nos vamos a conectar con en SSH que tiene la maquina, para ello sabiendo la contraseña y el usuario nos vamos a conectar a ese servcio con el siguiente comando.
+
+```bash
+ssh -p <PUERTO> boring@<IP_OBJETIVO>
+```
+
+**DENTRO DEL USUARIO**
+
+![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/SSH_001.PNG)
+
+Ahora vamos a usar el comando **ls -la** para ver los fichero que tiene el usuario, con lo cual vemos el fichero **user.txt** y se usara el comando **cat** para poder leerlo.
+
+**TEXTO DEL FICHERO**
+```bash
+User Flag But It Seems Wrong Like It`s Rotated Or Something
+synt{a0jv#########}  
+```
+
+Pero vemos que ese no es la bandera que buscamos, con lo cual esta **rotada** con lo cual se va usar pagina para poder ver el texto que tiene que ser.
+
+**ROT 13**
+
+![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/WEB_009.PNG)
 
 
 [VOLVER PAGINA PRINCIPAL](./)
