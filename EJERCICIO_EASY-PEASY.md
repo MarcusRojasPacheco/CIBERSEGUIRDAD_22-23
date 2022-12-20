@@ -280,7 +280,7 @@ Session completed.
 ### ¿Cuál es la contraseña para iniciar sesión en la máquina a través de SSH?
 
 ```bash
-myp##################
+iconver###############
 ```
 Como vemos en la pagina donde la ruta que nos da [Flag3](#¿qué-es-el-directorio-oculto) , observamos una imamgen. La cual vamos a descargar para ahora pasarle un programa que va extraer ficheros oculto de el.
 
@@ -302,7 +302,28 @@ steghide --extract -sf <FOTO.jpg>
 Anotar salvoconducto: 
 anotó los datos extraídos e/"secrettext.txt".
 ```
-Una vez puesto la clave que nos dio [Flag4](#usando-la-lista-de-palabras-que-se-le-proporcionó-en-esta-tarea-descifre-el-hash-¿cuál-es-la-contraseña)
+Una vez puesto la clave que nos dio [Flag3](#usando-la-lista-de-palabras-que-se-le-proporcionó-en-esta-tarea-descifre-el-hash-¿cuál-es-la-contraseña), se podra extraer el fichero oculto en la imagen.
+
+Con el comando **Cat** vamos a ver el contenido que tiene el fichero.
+
+**TEXTO DEL FICHERO**
+```bash
+username:boring
+password:
+01101001 01100011 01101111 01101110 01110110 01100101 01110010 ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ########     
+```
+Ahora vamos a convertidor de Binario en Texto ASCII con lo cual seria la password que estaba en binario
+
+**BINARIO A ASCII**
+
+![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/WEB_008.PNG)
+
+### ¿Cuál es el indicador de usuario?
+
+```bash
+iconver###############
+```
+Ahora nos vamos a conectar con 
 
 
 [VOLVER PAGINA PRINCIPAL](./)
