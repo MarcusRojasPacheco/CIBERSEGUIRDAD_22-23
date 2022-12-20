@@ -321,7 +321,7 @@ Ahora vamos a convertidor de Binario en Texto ASCII con lo cual seria la passwor
 ### ¿Cuál es el indicador de usuario?
 
 ```bash
-flag{n0wits33msn0rm4l}
+flag{n0w############}
 ```
 
 Ahora nos vamos a conectar con en SSH que tiene la maquina, para ello sabiendo la contraseña y el usuario nos vamos a conectar a ese servcio con el siguiente comando.
@@ -348,5 +348,8 @@ Pero vemos que ese no es la bandera que buscamos, con lo cual esta **rotada** co
 
 ![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/WEB_009.PNG)
 
+### ¿Cuál es la bandera raíz?
+
+*AUN POR TERMINAR*
 
 [VOLVER PAGINA PRINCIPAL](./)
