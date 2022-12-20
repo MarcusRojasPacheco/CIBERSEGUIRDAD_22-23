@@ -284,7 +284,7 @@ iconver###############
 ```
 Como vemos en la pagina donde la ruta que nos da [Flag3](#¿qué-es-el-directorio-oculto) , observamos una imamgen. La cual vamos a descargar para ahora pasarle un programa que va extraer ficheros oculto de el.
 
-*** INSTALAR STEGHIDE ***
+**INSTALAR STEGHIDE**
 
 ```bash
 sudo apt install steghide
