@@ -247,11 +247,11 @@ flag{/n0t###################}
 
 Ahora vamos a ver el codigo fuente de la pagina web de apache.
 
-![DECODE](/assets/img/HACKER_ETICO/EASYPEASY/WEB_005.PNG)
+![DECODE](/assets/img/HACKER_ETICO/EASYPEASY/WEB_006.PNG)
 
 Ahora vamos a usar una pagina web que nos va ayudar a decodificar lo que hemos obtenidos en el anterior apartado.
 
-![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/WEB_006.PNG)
+![Flag4](/assets/img/HACKER_ETICO/EASYPEASY/WEB_005.PNG)
 
 ### Usando la lista de palabras que se le proporcionó en esta tarea, descifre el hash, ¿cuál es la contraseña?
 
@@ -282,7 +282,27 @@ Session completed.
 ```bash
 myp##################
 ```
-Como vemos en la pagina donde la ruta que nos da [Flag3](#¿qué-es-el-directorio-oculto)
+Como vemos en la pagina donde la ruta que nos da [Flag3](#¿qué-es-el-directorio-oculto) , observamos una imamgen. La cual vamos a descargar para ahora pasarle un programa que va extraer ficheros oculto de el.
+
+*** INSTALAR STEGHIDE ***
+
+```bash
+sudo apt install steghide
+```
+
+Ahora vamos a usar el programa para poder extraer el fichero oculto con el siguiente comando.
+
+```bash
+steghide --extract -sf <FOTO.jpg>
+```
+
+**SALIDA DEL COMANDO**
+
+```bash
+Anotar salvoconducto: 
+anotó los datos extraídos e/"secrettext.txt".
+```
+Una vez puesto la clave que nos dio [Flag4](#usando-la-lista-de-palabras-que-se-le-proporcionó-en-esta-tarea-descifre-el-hash-¿cuál-es-la-contraseña)
 
 
 [VOLVER PAGINA PRINCIPAL](./)
