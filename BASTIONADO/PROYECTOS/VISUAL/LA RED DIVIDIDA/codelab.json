@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-01-16T12:24:04+01:00",
+  "id": "LA RED DIVIDIDA",
+  "duration": 15,
+  "title": "LA RED DIVIDIDA",
+  "summary": "",
+  "source": "RED-DIVIDIDA.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708",
+  "url": "LA RED DIVIDIDA"
+}
