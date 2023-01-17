@@ -9,7 +9,6 @@ Creamos un directorio llamado **cowboyhacker** y nos meteremos a el.
 mkdir cowboyhacker
 cd $_
 ```
-
 Una Vez dentro de la carpeta podemos realizar la actividad.
 
 ## Escaneo por NMAP
