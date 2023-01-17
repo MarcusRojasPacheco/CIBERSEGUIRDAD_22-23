@@ -144,5 +144,5 @@ Vemos que esta en **Base 58** con lo cual vamos a usar [Cyber-Chef](https://gchq
 - ¿Cuál es la contraseña FTP??
 
 ```bash
-RT@@@@@@@@@@@@
+!#@@@@@@@@
 ```
