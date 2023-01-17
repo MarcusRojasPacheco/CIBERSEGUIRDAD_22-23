@@ -47,6 +47,10 @@ Progress: 20465 / 20470 (99.98%)
 ===============================================================
 ```
 
+Vemos que en el codigo fuente vemos una palabra oculta.
+
+![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_02.png)
+
 Volvemos a usar **GoBuster** con el resultado obtenido para poder sacar la primera pregunta.
 
 **SALIDA DEL COMANDO**
