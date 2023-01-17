@@ -135,6 +135,14 @@ Con lo cual vemos un texto, con lo cual vamos a un analizador de Hash para ver e
 
 ![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_04.png)
 
-Vemos que esta en **Base 58** con lo cual vamos a usar [Cyber-Chef](https://gchq.github.io/CyberChef/) y la cual vamos obtener la contraseña del servicio **FTP**
+Vemos que esta en **Base 58** con lo cual vamos a usar [Cyber-Chef](https://gchq.github.io/CyberChef/) y la cual vamos obtener la contraseña del servicio **FTP**.
 
 ![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_05.png)
+
+### PREGUNTAS SOBRE LO ENCONTRADO
+
+- ¿Cuál es la contraseña FTP??
+
+```bash
+RT@@@@@@@@@@@@
+```
