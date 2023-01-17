@@ -49,7 +49,7 @@ Progress: 20465 / 20470 (99.98%)
 
 Vemos que en el codigo fuente una palabra oculta.
 
-![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_02.png)
+![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_01.png)
 
 Volvemos a usar **GoBuster** con el resultado obtenido anteriormente para poder sacar la primera pregunta.
 
@@ -75,7 +75,6 @@ Progress: 220536 / 220561 (99.99%)
 ===============================================================
 2023/01/17 16:49:18 Finished
 ===============================================================
-
 ```
 
 ### PREGUNTAS SOBRE LO ENCONTRADO
@@ -88,12 +87,34 @@ Progress: 220536 / 220561 (99.99%)
 
 Ahora dentro de la dirección web obtenida y miraremos su codigo fuente en el cual vemos lo siguiete.
 
-![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_01.png)
+![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_02.png)
 
-Usamos el **GoBuster** de nuevo para poder sacar 
+Usamos el **GoBuster** de nuevo para poder sacar la extensión en la cual nos da el codigo fuente que esta de forma oculta.
 
 ```bash
 gobuster dir -u <WEB> -w <DICCIONARIO> -x <Extensión>
 ```
 - -x : Extensión de archivo para buscar
 
+**SALIDA DEL COMANDO**
+```bash
+===============================================================
+Gobuster v3.4
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.69.132/i@@@@@@@@@/2@@@@/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.4
+[+] Extensions:              t@@@@@@@
+[+] Timeout:                 10s
+===============================================================
+2023/01/17 17:06:05 Starting gobuster in directory enumeration mode
+===============================================================
+/g@@@@@@@@@@@@@.t@@@@@@@@@   (Status: 200) [Size: 71]
+Progress: 441077 / 441122 (99.99%)
+===============================================================
+2023/01/17 17:53:23 Finished
+```
