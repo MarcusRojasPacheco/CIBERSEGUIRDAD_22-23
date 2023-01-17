@@ -47,11 +47,11 @@ Progress: 20465 / 20470 (99.98%)
 ===============================================================
 ```
 
-Vemos que en el codigo fuente vemos una palabra oculta.
+Vemos que en el codigo fuente una palabra oculta.
 
 ![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_02.png)
 
-Volvemos a usar **GoBuster** con el resultado obtenido para poder sacar la primera pregunta.
+Volvemos a usar **GoBuster** con el resultado obtenido anteriormente para poder sacar la primera pregunta.
 
 **SALIDA DEL COMANDO**
 ```bash
@@ -89,4 +89,11 @@ Progress: 220536 / 220561 (99.99%)
 Ahora dentro de la dirección web obtenida y miraremos su codigo fuente en el cual vemos lo siguiete.
 
 ![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_01.png)
+
+Usamos el **GoBuster** de nuevo para poder sacar 
+
+```bash
+gobuster dir -u <WEB> -w <DICCIONARIO> -x <Extensión>
+```
+- -x : Extensión de archivo para buscar
 
