@@ -52,27 +52,26 @@ Volvemos a usar **GoBuster** con el resultado obtenido para poder sacar la prime
 **SALIDA DEL COMANDO**
 ```bash
 ===============================================================
+===============================================================
 Gobuster v3.4
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ===============================================================
-[+] Url:                     http://10.10.78.161
+[+] Url:                     http://10.10.78.161/i@@@@@
 [+] Method:                  GET
 [+] Threads:                 10
-[+] Wordlist:                /usr/share/wordlists/dirb/big.txt
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 [+] Negative Status codes:   404
 [+] User Agent:              gobuster/3.4
 [+] Timeout:                 10s
 ===============================================================
-2023/01/17 16:19:00 Starting gobuster in directory enumeration mode
+2023/01/17 16:27:55 Starting gobuster in directory enumeration mode
 ===============================================================
-/.htpasswd            (Status: 403) [Size: 199]
-/.htaccess            (Status: 403) [Size: 199]
-/i@@@@@@              (Status: 301) [Size: 235] [--> http://10.10.78.161/i@@@@@@/]
-/server-status        (Status: 403) [Size: 199]
-Progress: 20465 / 20470 (99.98%)
+/2@@@                 (Status: 301) [Size: 240] [--> http://10.10.78.161/i@@@@@/2@@@/]
+Progress: 220536 / 220561 (99.99%)
 ===============================================================
-2023/01/17 16:21:00 Finished
+2023/01/17 16:49:18 Finished
 ===============================================================
+
 ```
 
 ### PREGUNTAS SOBRE LO ENCONTRADO
@@ -86,3 +85,4 @@ Progress: 20465 / 20470 (99.98%)
 Ahora dentro de la dirección web obtenida y miraremos su codigo fuente en el cual vemos lo siguiete.
 
 ![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_01.png)
+
