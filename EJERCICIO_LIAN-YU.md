@@ -118,3 +118,23 @@ Progress: 441077 / 441122 (99.99%)
 ===============================================================
 2023/01/17 17:53:23 Finished
 ```
+
+### PREGUNTAS SOBRE LO ENCONTRADO
+
+- ¿Cuál es el nombre del archivo que encontraste?
+
+```bash
+g@@@@@@@@@@@@@.t@@@@@@@@@
+```
+
+Ahora vamos al directorio que hemos obtenido y vemos lo siguiente
+
+![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_03.png)
+
+Con lo cual vemos un texto, con lo cual vamos a un analizador de Hash para ver en cual esta encriptado.
+
+![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_04.png)
+
+Vemos que esta en **Base 58** con lo cual vamos a usar [Cyber-Chef](https://gchq.github.io/CyberChef/) y la cual vamos obtener la contraseña del servicio **FTP**
+
+![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_05.png)
