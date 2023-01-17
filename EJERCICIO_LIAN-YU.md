@@ -131,6 +131,8 @@ Ahora vamos al directorio que hemos obtenido y vemos lo siguiente
 
 ![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_03.png)
 
+## DESENCRIPTAR EL TEXTO OBTENIDO
+
 Con lo cual vemos un texto, con lo cual vamos a un analizador de Hash para ver en cual esta encriptado.
 
 ![WEB_RESULTADO](/assets/img/HACKER_ETICO/LIAN-YU/WEB_04.png)
@@ -145,4 +147,69 @@ Vemos que esta en **Base 58** con lo cual vamos a usar [Cyber-Chef](https://gchq
 
 ```bash
 !#@@@@@@@@
+```
+
+## ENTRAR AL FTP
+
+Ahora se va entrar en el **FTP** con lo cual vamos a coger el usuario que hemos obtenido anteriormente junto con la contraseña.
+
+**SALIDA DEL COMANDO**
+```bash
+Connected to 10.10.69.132.
+220 (vsFTPd 3.0.2)
+Name (10.10.69.132:sunamy): vi@@@@@@@@@@@@
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp>
+```
+
+Ahora vamos a ver que ficheros existe en el usuario con lo cual usamos **ls -la** y se descargaria con el comando **get**.
+
+**SALIDA DEL COMANDO**
+```bash
+ftp> ls -la
+229 Entering Extended Passive Mode (|||54532|).
+150 Here comes the directory listing.
+drwxr-xr-x    2 1001     1001         4096 May 05  2020 .
+drwxr-xr-x    4 0        0            4096 May 01  2020 ..
+-rw-------    1 1001     1001           44 May 01  2020 .bash_history
+-rw-r--r--    1 1001     1001          220 May 01  2020 .bash_logout
+-rw-r--r--    1 1001     1001         3515 May 01  2020 .bashrc
+-rw-r--r--    1 0        0            2483 May 01  2020 .other_user
+-rw-r--r--    1 1001     1001          675 May 01  2020 .profile
+-rw-r--r--    1 0        0          511720 May 01  2020 Leave_me_alone.png
+-rw-r--r--    1 0        0          549924 May 05  2020 Queen's_Gambit.png
+-rw-r--r--    1 0        0          191026 May 01  2020 aa.jpg
+226 Directory send OK.
+ftp> get .other_user
+local: .other_user remote: .other_user
+229 Entering Extended Passive Mode (|||10838|).
+150 Opening BINARY mode data connection for .other_user (2483 bytes).
+100% |*****************************************************************************************************************|  2483       12.14 MiB/s    00:00 ETA
+226 Transfer complete.
+2483 bytes received in 00:00 (41.52 KiB/s)
+ftp> get Leave_me_alone.png
+local: Leave_me_alone.png remote: Leave_me_alone.png
+229 Entering Extended Passive Mode (|||39026|).
+150 Opening BINARY mode data connection for Leave_me_alone.png (511720 bytes).
+100% |*****************************************************************************************************************|   499 KiB  400.34 KiB/s    00:00 ETA
+226 Transfer complete.
+511720 bytes received in 00:01 (383.91 KiB/s)
+ftp> get Queen's_Gambit.png
+local: Queen's_Gambit.png remote: Queen's_Gambit.png
+229 Entering Extended Passive Mode (|||64566|).
+150 Opening BINARY mode data connection for Queen's_Gambit.png (549924 bytes).
+100% |*****************************************************************************************************************|   537 KiB  559.53 KiB/s    00:00 ETA
+226 Transfer complete.
+549924 bytes received in 00:01 (528.34 KiB/s)
+ftp> get aa.jpg
+local: aa.jpg remote: aa.jpg
+229 Entering Extended Passive Mode (|||53806|).
+150 Opening BINARY mode data connection for aa.jpg (191026 bytes).
+100% |*****************************************************************************************************************|   186 KiB  438.90 KiB/s    00:00 ETA
+226 Transfer complete.
+191026 bytes received in 00:00 (383.88 KiB/s)
 ```
