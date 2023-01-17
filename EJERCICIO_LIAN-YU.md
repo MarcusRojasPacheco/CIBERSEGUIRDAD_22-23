@@ -188,28 +188,28 @@ ftp> get .other_user
 local: .other_user remote: .other_user
 229 Entering Extended Passive Mode (|||10838|).
 150 Opening BINARY mode data connection for .other_user (2483 bytes).
-100% |*****************************************************************************************************************|  2483       12.14 MiB/s    00:00 ETA
+100% ||*****************************************|  2483       12.14 MiB/s    00:00 ETA
 226 Transfer complete.
 2483 bytes received in 00:00 (41.52 KiB/s)
 ftp> get Leave_me_alone.png
 local: Leave_me_alone.png remote: Leave_me_alone.png
 229 Entering Extended Passive Mode (|||39026|).
 150 Opening BINARY mode data connection for Leave_me_alone.png (511720 bytes).
-100% |*****************************************************************************************************************|   499 KiB  400.34 KiB/s    00:00 ETA
+100% ||*****************************************|   499 KiB  400.34 KiB/s    00:00 ETA
 226 Transfer complete.
 511720 bytes received in 00:01 (383.91 KiB/s)
 ftp> get Queen's_Gambit.png
 local: Queen's_Gambit.png remote: Queen's_Gambit.png
 229 Entering Extended Passive Mode (|||64566|).
 150 Opening BINARY mode data connection for Queen's_Gambit.png (549924 bytes).
-100% |*****************************************************************************************************************|   537 KiB  559.53 KiB/s    00:00 ETA
+100% ||*****************************************|   537 KiB  559.53 KiB/s    00:00 ETA
 226 Transfer complete.
 549924 bytes received in 00:01 (528.34 KiB/s)
 ftp> get aa.jpg
 local: aa.jpg remote: aa.jpg
 229 Entering Extended Passive Mode (|||53806|).
 150 Opening BINARY mode data connection for aa.jpg (191026 bytes).
-100% |*****************************************************************************************************************|   186 KiB  438.90 KiB/s    00:00 ETA
+100% |*****************************************|   186 KiB  438.90 KiB/s    00:00 ETA
 226 Transfer complete.
 191026 bytes received in 00:00 (383.88 KiB/s)
 ```
