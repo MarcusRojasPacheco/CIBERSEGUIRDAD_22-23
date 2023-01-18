@@ -372,7 +372,7 @@ User slade may run the following commands on LianYu:
     (root) PASSWD: /usr/bin/pkexec
 ```
 
-Vemos que tiene tiene una aplicación con privilegio de root con lo cual vamos usarla como sudo y vamos a ver que tiene la carpeta del usuario root.
+Vemos que tiene tiene una aplicación con privilegio de root con lo cual vamos usarla como sudo y vamos a ver que tiene la carpeta del usuario root y vamos a ejecutar una nueva terminal pero con privilegios root.
 
 **SALIDA DEL COMANDO**
 ```bash
