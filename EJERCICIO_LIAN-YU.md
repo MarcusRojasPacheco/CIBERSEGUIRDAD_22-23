@@ -178,38 +178,175 @@ drwxr-xr-x    4 0        0            4096 May 01  2020 ..
 -rw-------    1 1001     1001           44 May 01  2020 .bash_history
 -rw-r--r--    1 1001     1001          220 May 01  2020 .bash_logout
 -rw-r--r--    1 1001     1001         3515 May 01  2020 .bashrc
--rw-r--r--    1 0        0            2483 May 01  2020 .other_user
+-rw-r--r--    1 0        0            2483 May 01  2020 .o@@@@@@@@@@@@@
 -rw-r--r--    1 1001     1001          675 May 01  2020 .profile
--rw-r--r--    1 0        0          511720 May 01  2020 Leave_me_alone.png
--rw-r--r--    1 0        0          549924 May 05  2020 Queen's_Gambit.png
--rw-r--r--    1 0        0          191026 May 01  2020 aa.jpg
+-rw-r--r--    1 0        0          511720 May 01  2020 L@@@@@@@@@@@@.png
+-rw-r--r--    1 0        0          549924 May 05  2020 Q@@@@@@@@@@@@@@@.png
+-rw-r--r--    1 0        0          191026 May 01  2020 @@.jpg
 226 Directory send OK.
-ftp> get .other_user
-local: .other_user remote: .other_user
+ftp> get .o@@@@@@@@@@@@@
+local: .o@@@@@@@@@@@@@ remote: .o@@@@@@@@@@@@@
 229 Entering Extended Passive Mode (|||10838|).
-150 Opening BINARY mode data connection for .other_user (2483 bytes).
+150 Opening BINARY mode data connection for .o@@@@@@@@@@@@@ (2483 bytes).
 100% ||*****************************************|  2483       12.14 MiB/s    00:00 ETA
 226 Transfer complete.
 2483 bytes received in 00:00 (41.52 KiB/s)
-ftp> get Leave_me_alone.png
-local: Leave_me_alone.png remote: Leave_me_alone.png
+ftp> get L@@@@@@@@@@@@.png
+local: L@@@@@@@@@@@@.png remote: L@@@@@@@@@@@@.png
 229 Entering Extended Passive Mode (|||39026|).
-150 Opening BINARY mode data connection for Leave_me_alone.png (511720 bytes).
+150 Opening BINARY mode data connection for L@@@@@@@@@@@@.png (511720 bytes).
 100% ||*****************************************|   499 KiB  400.34 KiB/s    00:00 ETA
 226 Transfer complete.
 511720 bytes received in 00:01 (383.91 KiB/s)
-ftp> get Queen's_Gambit.png
-local: Queen's_Gambit.png remote: Queen's_Gambit.png
+ftp> get Q@@@@@@@@@@@@@@.png
+local: Q@@@@@@@@@@@@@@@.png remote: Q@@@@@@@@@@@@@@@.png
 229 Entering Extended Passive Mode (|||64566|).
-150 Opening BINARY mode data connection for Queen's_Gambit.png (549924 bytes).
+150 Opening BINARY mode data connection for Q@@@@@@@@@@@@@@@.png (549924 bytes).
 100% ||*****************************************|   537 KiB  559.53 KiB/s    00:00 ETA
 226 Transfer complete.
 549924 bytes received in 00:01 (528.34 KiB/s)
 ftp> get aa.jpg
-local: aa.jpg remote: aa.jpg
+local: @@.jpg remote: @@.jpg
 229 Entering Extended Passive Mode (|||53806|).
-150 Opening BINARY mode data connection for aa.jpg (191026 bytes).
+150 Opening BINARY mode data connection for @@.jpg (191026 bytes).
 100% |*****************************************|   186 KiB  438.90 KiB/s    00:00 ETA
 226 Transfer complete.
 191026 bytes received in 00:00 (383.88 KiB/s)
 ```
+## IMAGENES CORRUCTAS
+
+Como vemos tiene unas cuantas imagenes en cual unao esta corructa, con lo cual vamos a usar la herramienta **hexeditor** y veremo lo siguiente.
+
+```bash
+hexeditor <fichero>
+```
+
+**SALIDA DEL COMANDO**
+```bash
+File: L@@@@@@@@@@@@.png       ASCII Offset: 0x00000000 / 0x0007CEE7 (%00)   
+00000000  58 45 6F AE  0A 0D 1A 0A   00 00 00 0D  49 48 44 52 Eo.........IHDR
+```
+
+Como vemos a simplevista no vemos nada raro, pero si vamos a la wiki de encabezado HEX del [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics#/media/File:PNG-Gradient_hex.png) y la editamos como corresponde con el programa y tiene ser como el siguiente resultado.
+
+**SALIDA DEL COMANDO**
+```bash
+File: L@@@@@@@@@@@@.png       ASCII Offset: 0x00000006 / 0x0007CEE7 (%00)   
+00000000  89 50 4E 47  0D 0A 1A 0A   00 00 00 0D  49 48 44 52 PNG........IHDR
+```
+
+La imagen nos da una clave que se usara mas adelante
+
+Ahora tras analizar las imagenes con **StegHide** con el parametro **info**, vemos que una de ellas nos pide una contraseña con lo cual vamos a poner la contraseña de la imagen anterior.
+
+```bash
+steghide info <fichero>
+```
+**SALIDA DEL COMANDO**
+```bash
+"@@.jpg":
+  formato: jpeg
+  capacidad: 11,0 KB
+¿Intenta informarse sobre los datos adjuntos? (s/n) s
+Anotar salvoconducto: 
+  archivo adjunto "@@.zip":
+    tama�o: 596,0 Byte
+    encriptado: rijndael-128, cbc
+    compactado: si
+```
+
+Ahora vamos a extraer los archivos con "StegHide" con el parametro **Extract** y pondremos la contraseña que se obtuvo en la imagen que estaba corrompida
+
+```bash
+steghide extract -sf <fichero>
+```
+**SALIDA DEL COMANDO**
+```bash
+Anotar salvoconducto: 
+anot� los datos extra�dos e/"@@.zip".
+```
+- -sf : leerá un archivo stego de entrada estándar
+
+Ahora descomprimimos el archivo que hemos obtenido y vemos que tiene dos fichero.
+
+```bash
+unzip <fichero>
+```
+**SALIDA DEL COMANDO**
+```bash
+Archive:  @@.zip
+  inflating: p@@@@@@.txt              
+  inflating: s@@@@  
+```
+
+Vemos que uno de ellos tiene una clave de un usuario, esa contraseña se usara mas adelante.
+
+### PREGUNTAS SOBRE LO ENCONTRADO
+
+- ¿Cuál es el nombre del archivo con contraseña SSH?
+
+```bash
+s@@@@
+```
+
+## DENTRO DEL SSH
+
+Volvemos al **FTP** para ver que usuarios existe en el directorio **/home** con lo cual se va usar los siguiente comando.
+
+**SALIDA DEL COMANDO**
+```bash
+ftp> cd ..
+250 Directory successfully changed.
+ftp> ls -la
+229 Entering Extended Passive Mode (|||21257|).
+150 Here comes the directory listing.
+drwxr-xr-x    4 0        0            4096 May 01  2020 .
+drwxr-xr-x   23 0        0            4096 Apr 30  2020 ..
+drwx------    2 1000     1000         4096 May 01  2020 s@@@@
+drwxr-xr-x    2 1001     1001         4096 May 05  2020 v@@@@@@@@@@
+```
+
+Vemos que existe otro usuario, se intenta acceder desde el con el **FTP** y no se puede, con lo cual vamos a usar el otro servicio que tiene la maquina que es el **SSH**, para conectarse a el vamos a usar el usuario encontrado en el **FTP** y la contraseña obtenida del archivo extraido.
+
+```bash
+ssh <usuario>@10.10.44.255 
+```
+**SALIDA DEL COMANDO**
+```bash
+s@@@@@10.10.44.255's password: 
+                              Way To SSH...
+                          Loading.........Done.. 
+                   Connecting To Lian_Yu  Happy Hacking
+
+██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗██████╗ 
+██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝╚════██╗
+██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗   █████╔╝
+██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ██╔═══╝ 
+╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗███████╗
+ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
+
+
+        ██╗     ██╗ █████╗ ███╗   ██╗     ██╗   ██╗██╗   ██╗
+        ██║     ██║██╔══██╗████╗  ██║     ╚██╗ ██╔╝██║   ██║
+        ██║     ██║███████║██╔██╗ ██║      ╚████╔╝ ██║   ██║
+        ██║     ██║██╔══██║██║╚██╗██║       ╚██╔╝  ██║   ██║
+        ███████╗██║██║  ██║██║ ╚████║███████╗██║   ╚██████╔╝
+        ╚══════╝╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝    ╚═════╝  # 
+```
+
+Ahora vamos a ver que tiene el usuario en su carpeta.
+```bash
+s@@@@@LianYu:~$ ls -la
+total 32
+drwx------ 2 slade slade 4096 May  1  2020 .
+drwxr-xr-x 4 root  root  4096 May  1  2020 ..
+-rw------- 1 slade slade   22 May  1  2020 .bash_history
+-rw-r--r-- 1 slade slade  220 May  1  2020 .bash_logout
+-rw-r--r-- 1 slade slade 3515 May  1  2020 .bashrc
+-r-------- 1 slade slade   77 May  1  2020 .Important
+-rw-r--r-- 1 slade slade  675 May  1  2020 .profile
+-r-------- 1 slade slade   63 May  1  2020 user.txt
+```
+
+
+
