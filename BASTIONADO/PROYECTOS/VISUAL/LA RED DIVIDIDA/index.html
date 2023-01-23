@@ -1,0 +1,159 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>LA RED DIVIDIDA</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="LA RED DIVIDIDA"
+                  title="LA RED DIVIDIDA"
+                  environment="web"
+                  feedback-link="https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708">
+    
+      <google-codelab-step label="CREACIÓN DE LA VLSM" duration="5">
+        <h2 is-upgraded>DIVIDIMOS VLSM</h2>
+<p>Para ello vamos a crear la subredes, con lo cual vamos a usar una pagina en el cual nos va ayudar a realizar la división de la red.</p>
+<ul>
+<li><a href="https://www.arcadio.gq/calculadora-subredes-vlsm.html" target="_blank">ARCADIO</a></li>
+</ul>
+<p>Para ello nuestra red estara formada por lo siguiente</p>
+<ul>
+<li>14 DISPOSITIVOS EN VENTAS</li>
+<li>14 DISPOSITIVOS EN TRANSPORTE</li>
+<li>14 DISPOSITIVOS EN SERVIDORES (AUNQUE SE USARA MENOS)</li>
+<li>6 DISPOSITIVOS EN ADMINISTRATIVO</li>
+<li>2 DISPOSITIVOS EN ROUTER (SOLO SE USA ESTATICAMENTE PARA SU IPS)</li>
+</ul>
+<h2 is-upgraded>RESULTADO DE LA DIVISIÓN DE LA RED</h2>
+<p class="image-container"><img alt="RED" src="img\\cc4976abefaecad6.png"></p>
+<h2 is-upgraded>PACKET TRACER CISCO GEMELO DIGITAL</h2>
+<ul>
+<li><a href="https://marcusrojaspacheco.github.io/CIBERSEGUIRDAD_22-23/BASTIONADO/PROYECTOS/DOCUMENTOS/RED_PROYECTO_GRUPO_2.pkt" target="_blank">DESCARGAR</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CONFIGURACIÓN - SWITCH" duration="5">
+        <h2 is-upgraded>SWITCH - CONFIGURACIÓN INICIAL</h2>
+<p>Antes de empezar a configurar el Switch vamos a poner los siguientes comandos para poder configurarlo correctamente.</p>
+<pre><code language="language-bash" class="language-bash">ENABLE
+CONF T
+</code></pre>
+<h2 is-upgraded>SWITCH - CONFIGURACIÓN VLANS</h2>
+<p>Ahora vamos a poner los comandos para poder crear las VLANS en nuestro Switch.</p>
+<pre><code language="language-bash" class="language-bash">HOSTNAME (NOMBRE DE SWITCH)
+VLAN 10                        [REPETIR ESTE PASO LAS VECES NECESARIAS]
+NAME (NOMBRE)                  [REPETIR ESTE PASO LAS VECES NECESARIAS]
+EXIT
+</code></pre>
+<p>Todos estos parametros vamos a ponerlo en todos los Switch que estan en nuestra red y se va configuración segun se adapte a las necesidades de configuración.</p>
+<p>Con el siguiente comando vamos a ver si la configuración fue correcta.</p>
+<pre><code language="language-bash" class="language-bash">SHOW VLAN BRIEF                [PARA COMPROBAR LA CONFIGURACIÓN]
+</code></pre>
+<h2 is-upgraded>SWITCH - PUERTOS DE ACCESO</h2>
+<p>Ahora vamos a configurar los puertos de acceso en el Switch para poder que las VLAN se pueda comunicar entre ellas y el Router pueda dirigir bien las IPs configuración.</p>
+<pre><code language="language-bash" class="language-bash">INTERFACE {EL PUERTO CONECTADO AL ORDENADOR}
+SWITCHPORT MODE ACCESS
+SWITCHPORT ACCESS VLAN {NÚMERO DE VLAN DEL ORDENADOR}
+</code></pre>
+<p>Ahora vamos a activar el Switch Port Security.</p>
+<pre><code language="language-bash" class="language-bash">SWITCHPORT PORT-SECURITY
+SWITCHPORT PORT-SECURITY MAXIMUM 1
+SWITCHPORT PORT-SECURITY VIOLATION SHUTDOWN
+SWITCHPORT PORT-SECURITY MAC-ADDRESS STICKY
+</code></pre>
+<p>Con toda esta configuración vamos a asegurar que la IP este ligada con la MAC.</p>
+<h2 is-upgraded>SWITCH - PUERTOS TRONCALES</h2>
+<p>Ahora vamos a configurar los puertos troncales para asegurar que se pueda comunicar correctamente.</p>
+<pre><code language="language-bash" class="language-bash">INTERFACE {EL PUERTO CONECTADO ENTRE SWITCH}
+SWITCHPORT MODE TRUNK
+SWITCHPORT TRUNK ALLOWED VLAN 10,20,30,40 {LAS VLAN CREADAS}
+
+#PARA AÑADIR VLAN NATIVA
+SWITCHPORT TRUNK NATIVE VLAN 10
+</code></pre>
+<h2 is-upgraded>SWITCH - PUERTOS TRONCALES PARA ROUTER</h2>
+<p>Ahora vamos a configurar los puertos troncales para la interfaz que este conectado con el Router.</p>
+<pre><code language="language-bash" class="language-bash">INTERFACE GIGABITETHERNET 0/1
+SWITCHPORT MODE TRUNK
+
+#PARA AÑADIR VLAN NATIVA
+SWITCHPORT TRUNK NATIVE VLAN 10
+SWITCHPORT TRUNK ALLOWED VLAN 10,20,30,40 {LAS VLAN CREADAS}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CONFIGURACIÓN - ROUTER" duration="5">
+        <h2 is-upgraded>ROUTER - CONFIGURACIÓN INICIAL</h2>
+<p>Antes de empezar a configurar el Router vamos a poner los siguientes comandos para poder configurarlo correctamente.</p>
+<pre><code language="language-bash" class="language-bash">ENABLE
+CONF T
+HOSTNAME ROUTER
+INTERFACE GIGABITETHERNET 0/0/0
+NO SHUTDOWN
+EXIT
+</code></pre>
+<h2 is-upgraded>ROUTER - CREAR VLANS</h2>
+<p>Ahora vamos a crear las VLAN en el router con lo cual se va crear una interfaz virtual de la interfaz real, vamos usar el siguiente comando.</p>
+<pre><code language="language-bash" class="language-bash">INTERFACE GIGABITETHERNET 0/0/0.10
+ENCAPSULATION DOT1Q 10 NATIVE
+IP ADDRESS {IP DEL HOST RESERVADO PARA EL ROUTER DEPENDIENDO DE LA VLAN} {MÁSCARA DE RED}
+
+[REPETIR EL SIGUIENTE PROCESO LAS VECES NECESARIAS]
+
+INTERFACE GIGABITETHERNET 0/0/0.X0{DEPENDIENDO DE LA VLAN .10 .20 .30 ETC}
+ENCAPSULATION DOT1Q 10
+IP ADDRESS {IP DEL HOST RESERVADO PARA EL ROUTER DEPENDIENDO DE LA VLAN} {MÁSCARA DE RED}
+EXIT
+
+INTERACE GIGABITETHERNET 0/0/0
+NO SHUTDOWN
+EXIT
+</code></pre>
+<h2 is-upgraded>ROUTER - EXCLUIR IP EN EL DHCP</h2>
+<p>Vamos a configurar para que el Router no de la IP que querramos excluir de la difusión de la red.</p>
+<pre><code language="language-bash" class="language-bash">IP DHCP EXCLUDED-ADDRESS 192.168.1.1 (EXCLUIR IP)
+IP DHCP POOL DHCP_LAN_VENTA (CREAR DHCP PARA UNA VLAN)
+NETWORK 192.168.0.0 255.255.255.0 (SELECCIONAR IP)
+DEFAULT-ROUTER 192.168.0.1 (INDICAR IP DEL ROUTER)
+DNS-SERVER 1.1.1.1 (INDICAR DNS)
+EXIT
+(REPETIR ESTOS PASOS POR CADA VLAN)
+
+SHOW RUN {PARA COMPROBAR COMO HA QUEDADO LA CONFIGURACIÓN}
+</code></pre>
+<p>Con todo esto se ha terminado la configuración tanto del router como del Switch.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
