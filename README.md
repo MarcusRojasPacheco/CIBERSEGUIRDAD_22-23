@@ -32,6 +32,8 @@
 >
 > [GRUB SEGURO](./BASTIONADO/PROYECTOS/VISUAL/proyectos-GRUB/)
 >
+> [LIMPIEZA Y AISLAMIENTO](./BASTIONADO/PROYECTOS/VISUAL/Proyecto_3-Limpieza-Aislamiento)
+>
 > [VPN](./BASTIONADO/PROYECTOS/VISUAL/VPN%20WIREGUARD/)
 
 [def]: https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub
