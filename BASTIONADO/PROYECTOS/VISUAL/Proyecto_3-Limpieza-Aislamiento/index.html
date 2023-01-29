@@ -1,0 +1,176 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>LIMPIEZA Y AISLAMIENTO</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Proyecto_3-Limpieza-Aislamiento"
+                  title="LIMPIEZA Y AISLAMIENTO"
+                  environment="web"
+                  feedback-link="https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708">
+    
+      <google-codelab-step label="ANTES DE EMPEZAR" duration="2">
+        <h2 is-upgraded>¿PARA QUE SE USARA NUESTRO SERVICIO?</h2>
+<p>En nuestro proyecto vamos a usar un servidor &#34;Linux&#34; y para cliente vamos usar el Sistema Operativo &#34;Windows 10&#34;, con lo cual se va usar para un uso Ofimatico.</p>
+<p>Con lo cual vamos a configurar y quitar programas que no sea necesario para que sea mas limpio y no tenga servicio en la cual se pueda atacar.</p>
+<p class="image-container"><img alt="PNETLAB" src="img\\58e67df0fbaf5f82.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SERVIDOR LINUX" duration="10">
+        <h2 is-upgraded>ACTUALIZACIÓN DEL SERVIDOR</h2>
+<p>Vamos a usar el comando siguiente:</p>
+<pre><code language="language-bash" class="language-bash">apt-get update &amp;&amp; apt-get upgrade
+</code></pre>
+<p>Y se nos actualiza nuestro sistema linux.</p>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\faeb469a351d960f.png"></p>
+<h2 is-upgraded>KALR</h2>
+<p>Ahora vamos a obligar que el ejecutable glibcse este en direcciones diferente, con lo cual el atacante no sea capaz de lanzar un exploit o un ataque hacia las direcciones, y tambien lo que se hara es bloquear el kernel cuando se ejecute un exploit.</p>
+<p>Con lo cual vamos a editar el fichero <strong>/proc/sys/kernel/randomize_va_spacecon</strong>.</p>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\d841cdc62cd1eb6e.png"></p>
+<p>Con lo cual se pone el numero <strong>2</strong> con lo cual se activara:</p>
+<ul>
+<li><strong>ASLR</strong>: Ejecuta el programa da un resultado un diseño de memoria de pila diferente</li>
+<li><strong>LIBS/MMAP</strong>: LA ejecución del programa dara como resultado un diseño de memoria diferente</li>
+<li><strong>EXEC ASLR</strong>: Cada programa que se cumple <em>-fPIE -pie</em>, se cargara en diferente ubicaciones de memoria</li>
+</ul>
+<h2 is-upgraded>SERVICIOS</h2>
+<p>Ahora vamos a restringir los servicios que sean necesarios y dar acceso limitada.</p>
+<h3 is-upgraded>RESTRIGIR SERVICIO KALLSYMS</h3>
+<p>Vamos a restrigir el acceso a <em>/proc/kallsyms</em> con lo cual vamos a usar el siguiente comando:</p>
+<pre><code language="language-bash" class="language-bash">chmod 400 /proc/kallsyms
+</code></pre>
+<ul>
+<li><strong>400</strong>: Significa que permite la lectura por el usuario y deniega el acceso al archivo de grupos o otros.</li>
+</ul>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\75a55dcd4832e3c.png"></p>
+<h3 is-upgraded>DESHABILITAR FIFOS</h3>
+<p>Para ello vamos a usar el siguiente comando para poder deshabilitarlo. Los comando que vamos a usar es el siguiente:</p>
+<pre><code language="language-bash" class="language-bash">sysctl fs.protected_regular=1
+sysctl fs.protected_fifos=1
+</code></pre>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\8fd73bb748706cf8.png"></p>
+<h3 is-upgraded>DESHABILITAR IPv6</h3>
+<p>Al no usar este servicio lo vamos a quitar, ya que su uso no va ser necesario, vamos a usar los siguientes comandos:</p>
+<pre><code language="language-bash" class="language-bash">sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+</code></pre>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\a1296e6bce9c806e.png"></p>
+<h3 is-upgraded>RESTRINGIR ACCESO</h3>
+<p>Ahora vamos a restrigir el acesso a <strong>PERF</strong> y <strong>PTRACE</strong>. Vamos a usar los siguiente comando:</p>
+<pre><code language="language-bash" class="language-bash">sysctl -w kernel.perf_event_paranoid=3
+sysctl -w kernel.yama.ptrace_scope=3
+</code></pre>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\59f9696086933506.png"></p>
+<h4 is-upgraded>TERMINAL ROOT</h4>
+<p>Vamos a quitar el acceso al acceso donde se puede conectar el root con el siguiente comando:</p>
+<pre><code language="language-bash" class="language-bash">nano /etc/securetty
+</code></pre>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\61b82852c7a3c468.png"></p>
+<h3 is-upgraded>CONFIGURAR SSH</h3>
+<p>Vamos a configurar el fichero <strong>/etc/ssh/sshd_config</strong> con lo cual vamos a poner los siguientes parametros:</p>
+<pre><code language="language-bash" class="language-bash">ClientAliveInterval 500
+ClientAliveCountMax 3
+</code></pre>
+<ul>
+<li><strong>ClientAliveInterval</strong>: Poner que si existe inactividad el cliente conectado se desconecte del servidor.</li>
+<li><strong>ClientAliveCountMax</strong>: Si tras los envios establecido del cliente sigue sin responder se forzara el cierre de sessión.</li>
+</ul>
+<p class="image-container"><img alt="SERVIDOR_LINUX" src="img\\41438e15ce5f5560.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CLIENTE WINDOWS" duration="10">
+        <h2 is-upgraded>PROGRAMAS INSTALADOS</h2>
+<p>En el windows en el cual tenemos en <strong>PNETLAB</strong> nos trae por defecto lo siguiente:</p>
+<ul>
+<li>7-zip 19.00</li>
+<li>Google Chrome</li>
+<li>Microsoft Edge</li>
+<li>Putty release 0.74</li>
+<li>WinSCP 5.17.10</li>
+</ul>
+<p>Como su uso que vamos a darle a este ordenador es un uso <em>Ofimatico</em> con lo cual de los programas instalados vamos a quitarle 2 de ellos por su uso no va ser necesario.</p>
+<ul>
+<li><strong>PuTTY release 0.74</strong>: Este es un programa esta destinado a la conexion por Telnet y SSH, por lo que no hace falta para su función de uso ofimatico.</li>
+<li><strong>WinSCP 5.17.10</strong>: Este es un programa FTP, pero no se va usar en las funciones de Ofimaticas.</li>
+</ul>
+<h2 is-upgraded>SERVICIOS</h2>
+<p>Ahora vamos a poner los servicos en el cual vamos a quitar y no van ser necesario para su uso:</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>NOMBRE</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>ID DE TAREA</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>DESCRIPCIÓN</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>FAX</p>
+</td><td colspan="1" rowspan="1"><p><em>FAX</em></p>
+</td><td colspan="1" rowspan="1"><p>No se suele usar en los usuarios domestico habitualmente.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>IPV6</p>
+</td><td colspan="1" rowspan="1"><p><em>IPHPSVC</em></p>
+</td><td colspan="1" rowspan="1"><p>Como se usa IPv4 no hace falta este servicio.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>ADMINISTRADOR XBOXLIVE</p>
+</td><td colspan="1" rowspan="1"><p><em>XBLAUTHMANAGER</em></p>
+</td><td colspan="1" rowspan="1"><p>Es un uso Ofimatico no hace falta el servicio xbox.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>GUARDAR PARTIDA XBOXLIVE</p>
+</td><td colspan="1" rowspan="1"><p><em>XBLGAMESAVE</em></p>
+</td><td colspan="1" rowspan="1"><p>Es un uso Ofimatico no le hace falta este servicio</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>RED XBOXLIVE</p>
+</td><td colspan="1" rowspan="1"><p><em>XBOXNETAPISVC</em></p>
+</td><td colspan="1" rowspan="1"><p>Es un uso Ofimatico no va necesitar ese servicio.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>ESCRITORIO REMOTO</p>
+</td><td colspan="1" rowspan="1"><p><em>REMOTEACCESS</em></p>
+</td><td colspan="1" rowspan="1"><p>La maquina de momento se usara presencialmente con lo cual no se va necesitar de momento este servicio.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>COMPATIBILIDAD DE PROGRAMAS</p>
+</td><td colspan="1" rowspan="1"><p><em>PCASVC</em></p>
+</td><td colspan="1" rowspan="1"><p>Se va actualizar los programas no se va necesitar que sean programas antiguos.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DIAGNOSTICOS</p>
+</td><td colspan="1" rowspan="1"><p><em>DIAGSVC</em></p>
+</td><td colspan="1" rowspan="1"><p>Al usuario que va usar este ordenador no va necesitar mandar información a Microsoft.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>BIOMETRICO DE WINDOWS</p>
+</td><td colspan="1" rowspan="1"><p><em>WBIOSRVC</em></p>
+</td><td colspan="1" rowspan="1"><p>Si no tenemos en nuestro ordenador un sistema reconocimiento de huella o facial no va ser necesario.</p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
