@@ -95,6 +95,7 @@ Vamos arreglar los siguientes errores:
 > *En Docker, los contenedores se ejecutan con privilegios y permisos específicos necesarios para realizar tareas específicas. Sin embargo, es importante limitar estos privilegios para evitar ataques o errores que puedan comprometer la seguridad del sistema.*
 >
 > ![2.14](/assets/img/PPS/ALE/004_bench.png)
+
 > ***2.16***: Vamoa a usar el parametro **"no-new-privileges": true** para poder solucionar el error.
 >
 > *Indica que el proxy de usuario no está desactivado.*
@@ -123,3 +124,32 @@ Ahora vamos a ver el resultado que nos da tras la configuración aplicada.
 ##### **VER CONFIGURACIÓN**
 
 ![BENCH](/assets/img/PPS/ALE/003_bench.png)
+
+### ANALISIS ARCHIVO DOCKERFILE
+Ahora vamos a elegir un archivo **dockerfile** que se habia creado en la actividad [UT3.AP00A - AFIANZANDO EL USO DE DOCKERFILE](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=454669) y se va realizar un testeo con **Trivy**
+
+
+#### INSTALACIÓN DE TRIVY
+Ahora vamos a instalar **Trivy** con el siguiente comando.
+
+```bash
+sudo apt-get install wget apt-transport-https gnupg lsb-release
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+sudo apt-get update
+sudo apt-get install trivy
+```
+#### EJECUTAR TRIVY
+Ahora vamos a ejecutar **Trivy**.
+```bash
+trivy image <docker-imagen>
+```
+##### VER LAS VULNERABILIDADES 
+
+![TRIVY](/assets/img/PPS/ALE/001_trivy.png)
+
+Vemos que existe una vulnerabilidad en apache **CVE-2006-20001** con lo cual podria causar que el proceso se bloquee.
+
+![CVE](/assets/img/PPS/ALE/001_CVE.png)
+
+### ANALISIS DE IMAGENESa
