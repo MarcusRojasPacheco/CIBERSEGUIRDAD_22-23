@@ -88,12 +88,11 @@ Como se ve que se ha cambiando, ya que tenemos los directorios auditados, pero a
 ### DAEMON DOCKER
 
 Vamos arreglar los siguientes errores:
-
-    > ***2.14***: Vamos a usar el parametro **"userland-proxy": false**
-    > 
-    ![2.14](/assets/img/PPS/ALE/004_bench.png)
-    > ***2.16***: Vamoa a usar el parametro **"no-new-privileges": true**
-    ![2.16](/assets/img/PPS/ALE/005_bench.png)
+> ***2.14***: Vamos a usar el parametro **"userland-proxy": false**
+> 
+![2.14](/assets/img/PPS/ALE/004_bench.png)
+> ***2.16***: Vamoa a usar el parametro **"no-new-privileges": true**
+![2.16](/assets/img/PPS/ALE/005_bench.png)
 
 
 Ahora en algunas opciones puede fallar, simplemente por no esta disponibles, por lo que si no se levanta el servicio de **Docker**, con lo cual vamos a crear un fichero en **/etc/docker/daemon.json**.
