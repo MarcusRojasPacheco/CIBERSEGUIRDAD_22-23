@@ -169,7 +169,34 @@ Vemos que en *Login* Existe una **Critica**
 
 ![LOGIN-WP](/assets/img/PPS/ALE/003_trivy.png)
 
+Vemos que tambien en est versión tambien exisite una vulnerabilidad con la **password** con lo que es **Critica**
+
+![PASSWORD](/assets/img/PPS/ALE/004_trivy.png)
+
+Ahora vamos a usar un Filtro de **Trivy** en el cual vamos a decir solos las vulnerabilidades criticas.
+
+```bash
+trivy image --severity CRITICAL <docker-imagen>
+```
+
+![CRITICAL](/assets/img/PPS/ALE/006_trivy.png)
+
+Como se observa existe como **269** Vulnerabilidades **Criticas**.
+
 ##### **ULTIMA VERSIÓN**
 Vemos que en *Login* ya no existe una vulnerabilidad **Critica**
 
 ![LOGIN-WP](/assets/img/PPS/ALE/002_trivy.png)
+
+En esta versión ya esta solucionada esta vulnerabilidad con **password**
+
+![PASSWORD](/assets/img/PPS/ALE/005_trivy.png)
+
+Ahora vamos hacer el mismo comando pero para la versión mas actual.
+
+![CRITICAL](/assets/img/PPS/ALE/007_trivy.png)
+
+Como se observa en esta versión mas actual se ve solo **11** Vulnerabilidades **Criticas**.
+
+### CONCLUSIÓN
+Tenemos que tener siempre a la ultima versión para no tener tantas vulnerabilidades y lo mas importante actualizar todo para ser mas dificil su ataque.
