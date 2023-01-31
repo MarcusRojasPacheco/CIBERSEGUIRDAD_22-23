@@ -152,4 +152,14 @@ Vemos que existe una vulnerabilidad en apache **CVE-2006-20001** con lo cual pod
 
 ![CVE](/assets/img/PPS/ALE/001_CVE.png)
 
-### ANALISIS DE IMAGENESa
+### ANALISIS DE IMAGENES
+
+Ahora vamos a crear la analisar la Imagen WordPress de la Actividad [UT3.AP03](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=454668) con lo que vamos analisarlo con **trivy**, despues se hara un cambio con lo que vamos a usar *wordpress:4.6* y se realiza el mismo proceso.
+
+#### COMPARACIÓN DE IMAGENES
+
+Ahora vamos a usar **trivy** para ver las vulnerabilidades, con lo cual la versión 4.6 tiene mucha vulnerabilidades.
+
+> ![DOCKER](/assets/img/PPS/ALE/001_docker.png)
+>
+> ![DOCKER](/assets/img/PPS/ALE/002_docker.png)
