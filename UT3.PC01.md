@@ -40,3 +40,37 @@ Se observa que nos sales unos errores al ejecutarlo, simplemente por no tener re
 Auditd es un sistema de auditoría para realizar un seguimiento de los cambios en el sistema operativo y el sistema de archivos. Se utiliza para registrar y monitorear la actividad del sistema, como inicios de sesión, accesos a archivos y cambios en la configuración de seguridad. Los registros generados por auditd se pueden usar para detectar e investigar posibles incidentes de seguridad. Es una herramienta importante para auditar y monitorear la seguridad del sistema.
 
 #### INSTALACIÓN DEL AUDITD
+Ahora vamos a instalar auditd con el siguiente comando.
+
+```bash
+sudo apt-get install auditd
+```
+
+#### CONFIGURACIÓN DEL FICHERO
+Ahora vamos a editar el fichero **/etc/audit/rules.d/audit.rules**
+
+##### PARAMETROS A INSERTAR
+```bash
+-w /usr/bin/docker -p wa
+-w /var/lib/docker -p wa
+-w /etc/docker -p wa
+-w /lib/systemd/system/docker.service -p wa 
+-w /lib/systemd/system/docker.socket -p wa 
+-w /etc/default/docker -p wa
+-w /etc/docker/daemon.json -p wa
+-w /usr/bin/docker-containerd -p wa
+-w /usr/bin/docker-runc -p wa
+-w /run/containerd -p wa
+-w /etc/containerd/config.toml -p wa
+-w /usr/bin/containerd -p wa
+-w /usr/bin/containerd-shim -p wa
+-w /usr/bin/containerd-shim-runc-v1 -p wa
+-w /usr/bin/containerd-shim-runc-v2 -p wa
+-w /usr/bin/runc -p wa
+```
+
+Como vemos se va indiciar que **-w** nos indica que el fichero deber ser auditado por el programa instalado y que **-p wa** indica que se debe generar *logs* ante cualquier modificado en dichos ficheros o en el directorios.
+
+##### PARAMETROS DENTRO DEL FICHERO
+![AUDIT](/assets/img/PPS/ALE/001_auditpng.png)
+sd
