@@ -90,7 +90,7 @@ Como se ve que se ha cambiando, ya que tenemos los directorios auditados, pero a
 Vamos arreglar los siguientes errores:
 
     > ***2.14***: Vamos a usar el parametro **"userland-proxy": false**
-    >
+    > 
     ![2.14](/assets/img/PPS/ALE/004_bench.png)
     > ***2.16***: Vamoa a usar el parametro **"no-new-privileges": true**
     ![2.16](/assets/img/PPS/ALE/005_bench.png)
