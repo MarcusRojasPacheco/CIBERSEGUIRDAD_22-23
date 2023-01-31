@@ -93,13 +93,15 @@ Vamos arreglar los siguientes errores:
 > *Indica que el derecho del contenedor a obtener nuevos permisos no está restringido.*
 >
 > *En Docker, los contenedores se ejecutan con privilegios y permisos específicos necesarios para realizar tareas específicas. Sin embargo, es importante limitar estos privilegios para evitar ataques o errores que puedan comprometer la seguridad del sistema.*
-![2.14](/assets/img/PPS/ALE/004_bench.png)
+>
+> ![2.14](/assets/img/PPS/ALE/004_bench.png)
 > ***2.16***: Vamoa a usar el parametro **"no-new-privileges": true** para poder solucionar el error.
 >
 > *Indica que el proxy de usuario no está desactivado.*
 >
 > *El proxy de usuario es una funcionalidad en Docker que permite que los contenedores se comuniquen con otros servicios y redes. Sin embargo, el uso del proxy de usuario puede ser un riesgo de seguridad, ya que puede permitir que los atacantes redirijan el tráfico de red y comprometan la seguridad del sistema.*
-![2.16](/assets/img/PPS/ALE/005_bench.png)
+>
+>![2.16](/assets/img/PPS/ALE/005_bench.png)
 
 
 Ahora en algunas opciones puede fallar, simplemente por no esta disponibles, por lo que si no se levanta el servicio de **Docker**, con lo cual vamos a crear un fichero en **/etc/docker/daemon.json**.
@@ -116,7 +118,7 @@ Ahora en algunas opciones puede fallar, simplemente por no esta disponibles, por
     "no-new-privileges": true
 }
 ```
-Ahora vamos a ver el resultado que nos da con el fichero creado
+Ahora vamos a ver el resultado que nos da tras la configuración aplicada.
 
 ##### **VER CONFIGURACIÓN**
 
