@@ -163,3 +163,13 @@ Ahora vamos a usar **trivy** para ver las vulnerabilidades, con lo cual la versi
 > ![DOCKER](/assets/img/PPS/ALE/001_docker.png)
 >
 > ![DOCKER](/assets/img/PPS/ALE/002_docker.png)
+
+##### **VERSIÓN 4.6**
+Vemos que en *Login* Existe una **Critica** 
+
+![LOGIN-WP](/assets/img/PPS/ALE/003_trivy.png)
+
+##### **ULTIMA VERSIÓN**
+Vemos que en *Login* ya no existe una vulnerabilidad **Critica**
+
+![LOGIN-WP](/assets/img/PPS/ALE/002_trivy.png)
