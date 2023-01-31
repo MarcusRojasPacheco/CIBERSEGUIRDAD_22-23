@@ -13,4 +13,21 @@ layout: default
 #### ¿QUE ES DOCKER BENCH?
 Docker-bench es un script bash para probar la configuración de seguridad de los sistemas que ejecutan contenedores Docker. Verifica que se sigan una serie de recomendaciones y mejores prácticas para la seguridad del contenedor Docker y hace recomendaciones para mejorar la seguridad.
 
+#### INSTALACIÓN DEL DOCKER BENCH
+Tenemos que descargar el **DOCKER BENCH**, vamos a descargar el *Script* que esta en **Git**
 
+##### COMANDOS
+
+```bash
+git clone https://github.com/docker/docker-bench-security.git
+cd $_
+./docker-bench-security.sh
+```
+
+#### EJECUCIÓN DEL DOCKER BENCH
+Ahora vamos a ejecutar el script con el siguiente comando.
+
+```bash
+sh docker-bench-security.sh
+```
+![BENCH](/assets/img/PPS/ALE/001_bench.png)
