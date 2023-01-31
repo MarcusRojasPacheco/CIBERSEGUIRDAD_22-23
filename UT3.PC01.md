@@ -79,7 +79,7 @@ Ahora vamos a reiniciar el servicio para aplicar los cambios
 ```bash
 sudo service auditd restart
 ```
-#### VER LA NUEVA CONFIGURAC
+#### VER LA NUEVA CONFIGURACIÓN
 
 ![BENCH](/assets/img/PPS/ALE/002_bench.png)
 
@@ -101,3 +101,8 @@ Ahora en algunas opciones puede fallar, simplemente por no esta disponibles, por
     "no-new-privileges": true
 }
 ```
+Ahora vamos a ver el resultado que nos da con el fichero creado
+
+##### **VER CONFIGURACIÓN**
+
+![BENCH](/assets/img/PPS/ALE/003_bench.png)
