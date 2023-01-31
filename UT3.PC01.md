@@ -49,7 +49,7 @@ sudo apt-get install auditd
 #### CONFIGURACIÓN DEL FICHERO
 Ahora vamos a editar el fichero **/etc/audit/rules.d/audit.rules**
 
-##### PARAMETROS A INSERTAR
+##### **PARAMETROS A INSERTAR**
 ```bash
 -w /usr/bin/docker -p wa
 -w /var/lib/docker -p wa
@@ -73,4 +73,31 @@ Como vemos se va indiciar que **-w** nos indica que el fichero deber ser auditad
 
 ##### PARAMETROS DENTRO DEL FICHERO
 ![AUDIT](/assets/img/PPS/ALE/001_auditpng.png)
-sd
+
+#### REINICIO AUDITD
+Ahora vamos a reiniciar el servicio para aplicar los cambios
+```bash
+sudo service auditd restart
+```
+#### VER LA NUEVA CONFIGURAC
+
+![BENCH](/assets/img/PPS/ALE/002_bench.png)
+
+Como se ve que se ha cambiando, ya que tenemos los directorios auditados, pero aun vemos que tiene algunos errores, que ahora vamos a configurar los fichero para poder corregirlo.
+
+### DAEMON DOCKER
+
+Ahora en algunas opciones puede fallar, simplemente por no esta disponibles, por lo que si no se levanta el servicio de **Docker**, con lo cual vamos a crear un fichero en **/etc/docker/daemon.json**.
+
+##### **PARAMETROS A INSERTAR**
+```json
+{
+"icc": false,
+    "userns-remap": "default",
+    "log-driver": "syslog", 
+    "disable-legacy-registry": true,
+    "live-restore": true,
+    "userland-proxy": false,
+    "no-new-privileges": true
+}
+```
