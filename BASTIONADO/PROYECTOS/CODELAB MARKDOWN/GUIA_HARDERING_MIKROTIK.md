@@ -12,7 +12,7 @@ feedback link: https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/iss
 Duration: 0:02:00
 
 ### QUE SE VA USAR EN ESTA GUIA
-Para esta Guia de Hardering vamos usar un router **Mikrotik** en el cual vamos a usar las guias [HARDENING MIKROTIK](https://mum.mikrotik.com/presentations/KH17/presentation_4162_1493374113.pdf) y la Wiki oficila [WIKI-MIROKTIK](https://wiki.mikrotik.com/wiki/Manual:Securing_Your_Router).
+Para esta Guia de Hardering vamos usar un router **Mikrotik** en el cual vamos a usar las guias [HARDENING MIKROTIK](https://mum.mikrotik.com/presentations/KH17/presentation_4162_1493374113.pdf) y la Wiki oficila [WIKI-MIKROTIK](https://wiki.mikrotik.com/wiki/Manual:Securing_Your_Router).
 
 ![Mikrotik](/img2/MikroTik_Logo_(2022).svg.png)
 
