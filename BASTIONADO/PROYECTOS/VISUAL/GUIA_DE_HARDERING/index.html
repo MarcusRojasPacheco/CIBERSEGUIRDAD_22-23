@@ -1,0 +1,185 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>GUIA DE HARDENIG</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="GUIA_DE_HARDERING"
+                  title="GUIA DE HARDENIG"
+                  environment="web"
+                  feedback-link="https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708">
+    
+      <google-codelab-step label="ROUTEROS - MIRKOTIK" duration="2">
+        <h2 is-upgraded>QUE SE VA USAR EN ESTA GUIA</h2>
+<p>Para esta Guia de Hardering vamos usar un router <strong>Mikrotik</strong> en el cual vamos a usar las guias <a href="https://mum.mikrotik.com/presentations/KH17/presentation_4162_1493374113.pdf" target="_blank">HARDENING MIKROTIK</a> y la Wiki oficila <a href="https://wiki.mikrotik.com/wiki/Manual:Securing_Your_Router" target="_blank">WIKI-MIROKTIK</a>.</p>
+<p class="image-container"><img alt="Mikrotik" src="img\\f151948dffefe5f5.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CAMBIAR EL USUARIO &#34;ADMIN&#34;" duration="5">
+        <h2 is-upgraded>PELIGRO DEL USUARIO POR DEFECTO</h2>
+<p>Para ello en <a href="https://mikrotik.com/download#" target="_blank">WinBox</a>, entramos con el usuario <strong>Admin</strong>, con lo cual si viene de fabrica el router no tiene contraseña y puede entrar solo con el usuario.</p>
+<p>Esto es un peligro ya que no tiene ninguna de la protección si un usuario se conecta, solo se puso en la versión <em>6.48.6</em> se añadio una mecanica en el <strong>winbox</strong> en la cual se tiene poner el modo <em>legacy</em> si quiere acceder desde el router si no tiene ninguna de la protección.</p>
+<h2 is-upgraded>AÑADIR USUARIO</h2>
+<p>Ahora vamos a crear un nuevo usuario como administrador, con lo cual se va usar el siguiente comando en mikrotik:</p>
+<pre><code language="language-bash" class="language-bash">/user add name=Admin_Atrak-dos password=aTR@K-D0s!2023 group=full
+</code></pre>
+<p>Ahora vamos a cambiar el usuario de nombre de <strong>Admin</strong> por otro usuario.</p>
+<pre><code language="language-bash" class="language-bash">/user set admin name=noAdmin
+</code></pre>
+<p>Y vamos a desabilitar el acceso al usuario <strong>admin</strong> para tener una mayor seguridad.</p>
+<pre><code language="language-bash" class="language-bash">/uset set noAdmin disabled=yes #Se cambio arriba &#34;admin&#34; por &#34;noAdmin&#34;
+</code></pre>
+<p>Vamos a limitar el acceso por IP, ya que se puede entrar por MAC en los router mikrotik, aveces al tener varios configurado seria mas facil entrar por IP, con lo cual se va poner que este permitidos desde la subred 192.168.1.0/24.</p>
+<pre><code language="language-bash" class="language-bash">/ip firewall filter add action=drop chain=input comment=&#34;Deny non-whitelisted IP access to router&#34; in-interface=PUENTE src-address=!192.168.1.0/24
+</code></pre>
+<p>Ahora vamos a establecer un tiempo de espera si el usuario esta inactivo.</p>
+<pre><code language="language-bash" class="language-bash">/ip service set www-ssl idle-timeout=5m
+</code></pre>
+<p>Y guardamos lo cambios que hemos realizado.</p>
+<pre><code language="language-bash" class="language-bash">/save
+</code></pre>
+<h2 is-upgraded>SEGUIRDAD EN LA CONTRASEÑA</h2>
+<p>Vamos a poner una nueva politica de contraseña en el Router con el siguiete comando.</p>
+<pre><code language="language-bash" class="language-bash">/ip hotspot user profile set Admin_Atrak-dos password-strength=14
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CAMBIAR EL ACCESO A LA WEB DEL ROUTER" duration="2">
+        <h2 is-upgraded>CAMBIO DE COMO SE ENTRA EN LA WEB ROUTER</h2>
+<p>Para cambiar el modo en el cual se puede entrar en el router se va cambiar el puerto en cual se puede entrar.</p>
+<pre><code language="language-bash" class="language-bash">/ip service set www port=8989
+</code></pre>
+<p>Y vamos a poner que solo se puede entrar con la subred creada.</p>
+<pre><code language="language-bash" class="language-bash">/ip firewall filter add chain=input action=accept protocol=tcp dst-port=8989 src-address=192.168.1.0/24
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="RED WIFI PARA EMPLEADOS" duration="5">
+        <h2 is-upgraded>CREAR UNA NUEVA RED WIFI PARA EMPLEADOS</h2>
+<p>Para crear una red WiFi para los empleados con un rango de direcciones IP de 192.168.1.100 a 192.168.1.120 y asegurarla, puedes seguir los siguientes pasos en RouterOS de MikroTik, con lo cual vamos a usar los siguientes comandos:</p>
+<pre><code language="language-bash" class="language-bash">/interface wireless
+add name=wlan-empleado ssid=empleado_WiFi mode=ap-bridge frequency=2.4ghz-b/g/n channel-width=20/40mhz-ht-above security-profile=empleado
+</code></pre>
+<h3 is-upgraded>DHCP SERVER</h3>
+<p>Ahora vamos a configurar el DHCP SERVER del router para la nueva red Wifi</p>
+<pre><code language="language-bash" class="language-bash">/ip address
+add address=192.168.1.1/24 interface=wlan-empleado
+
+/ip dhcp-server
+add address-pool=empleado-pool disabled=no interface=wlan-empleado name=empleado-dhcp lease-time=1d
+</code></pre>
+<p>Ahora vamos a configurar el <strong>pool</strong> de las direcciones IP</p>
+<pre><code language="language-bash" class="language-bash">/ip pool
+add name=empleado-pool ranges=192.168.1.100-192.168.1.120
+</code></pre>
+<h3 is-upgraded>SEGURIDAD EN LA RED WIFI</h3>
+<p>Para ellos se pondra los siguientes comando para poner seguro nuestra red wifi para los empleado y poder autenticar a su inicio.</p>
+<pre><code language="language-bash" class="language-bash">/interface wireless security-profiles
+add name=empleado mode=dynamic-keys authentication-types=wpa-psk,wpa2-psk unicast-ciphers=aes-ccm group-ciphers=aes-ccm wpa-pre-shared-key=3mplead0WiFi2023
+</code></pre>
+<p>y ponemos el siguiente comando para aplique en el perfil creado.</p>
+<pre><code language="language-bash" class="language-bash">/interface wireless set wlan-employees security-profile=employees
+</code></pre>
+<p>Ahora vamos a ocultar la red wifi de los demas, obviamente esto no evita un escaneo de red oculta con las herramienta que se pueda usar para dectacta la red.</p>
+<pre><code language="language-bash" class="language-bash">/interface wireless set wlan1 hide-ssid=yes
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="RED WIFI CLIENTES" duration="5">
+        <h2 is-upgraded>CREAR UNA NUEVA RED WIFI PARA CLIENTES</h2>
+<p>Ahora como es habitual en algunas empresa pone una red wifi para los clientes pero tendra limitaciones en su conexión para ello vamos a crearla de la siguiente manera:</p>
+<pre><code language="language-bash" class="language-bash">/interface wireless
+add name=wlan2 ssid=Invitados
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/interface wireless
+set wlan2 frequency=2412 band=2ghz-onlyn channel-width=20/40mhz-Ce security-profile=Invitados ssid=MikroTik guest-mode=yes wps-mode=disabled
+/ip address add interface=wlan2 address=10.0.0.1/24
+</code></pre>
+<p>Ahora creamos la <strong>pool</strong> para la red cliente</p>
+<pre><code language="language-bash" class="language-bash">/ip pool add name=cliente-pool ranges=10.10.10.100-10.10.10.120
+</code></pre>
+<p>Ahora vamos a configurar el HostsPot y poder configurar el ancho de banda que puede usar los clientes.</p>
+<pre><code language="language-bash" class="language-bash">/ip hotspot profile set [ find default=yes ] html-directory=flash/hotspot
+/ip hotspot user profile add name=invitados idle-timeout=none keepalive-timeout=2m rate-limit=256k/256k shared-users=unlimited
+/ip hotspot add address-pool=invitados-dhcp disabled=no interface=wlan2 name=invitados profile=invitados user-profile=invitados
+/ip pool add name=invitados-dhcp ranges=10.0.0.100-10.0.0.120
+</code></pre>
+<p>Ahora vamos a configurar el <strong>Firewall</strong> para que permita el trafico de entrada y salida de la red cliente y solo tenga servicio necesarios como el DNS,DHCP, y HTTP/HTTPS.</p>
+<pre><code language="language-bash" class="language-bash">/ip firewall filter
+add action=accept chain=input comment=&#34;Allow established/related connections&#34; connection-state=established,related
+add action=accept chain=input comment=&#34;Allow ICMP&#34; protocol=icmp
+add action=accept chain=input comment=&#34;Allow hotspot login&#34; dst-port=80,443 protocol=tcp
+add action=accept chain=input comment=&#34;Allow DHCP&#34; dst-port=67 protocol=udp
+add action=drop chain=input comment=&#34;Drop all other input traffic&#34;
+add action=accept chain=forward comment=&#34;Allow established/related connections&#34; connection-state=established,related
+add action=accept chain=forward comment=&#34;Allow DNS&#34; dst-port=53 protocol=udp
+add action=accept chain=forward comment=&#34;Allow DHCP&#34; dst-port=67 protocol=udp
+add action=accept chain=forward comment=&#34;Allow HTTP and HTTPS&#34; dst-port=80,443 protocol=tcp
+add action=drop chain=forward comment=&#34;Drop all other forward traffic&#34;
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="ACTUALIZACIÓN DEL ROUTER" duration="5">
+        <h2 is-upgraded>ACTUALIZAR EL ROUTER</h2>
+<p>Antes de actualizar, realiza una copia de seguridad de la configuración actual del dispositivo.</p>
+<pre><code language="language-bash" class="language-bash">/system backup save name=copia_17_02_2023
+</code></pre>
+<p>Vamos verificar si existe actualizaciones</p>
+<pre><code language="language-bash" class="language-bash">/system package update check-for-updates
+</code></pre>
+<p>Y si hay actualizaciones disponibles, descarga los archivos de actualización.</p>
+<pre><code language="language-bash" class="language-bash">/system package update download
+</code></pre>
+<p>Vamos a instalar la actualización</p>
+<pre><code language="language-bash" class="language-bash">/system package update install
+</code></pre>
+<p>Después de la actualización, verifica si hay problemas.</p>
+<pre><code language="language-bash" class="language-bash">/system routerboard print
+/system package print
+</code></pre>
+<p>Si todo está funcionando correctamente, borra los archivos de actualización descargados</p>
+<pre><code language="language-bash" class="language-bash">/system package update clean
+</code></pre>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
