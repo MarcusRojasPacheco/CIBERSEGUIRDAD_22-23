@@ -37,5 +37,7 @@
 > [LIMPIEZA Y AISLAMIENTO](./BASTIONADO/PROYECTOS/VISUAL/Proyecto_3-Limpieza-Aislamiento)
 >
 > [VPN](./BASTIONADO/PROYECTOS/VISUAL/VPN%20WIREGUARD/)
+> 
+> [HARDERING MIKROTIK](.BASTIONADO/PROYECTOS/VISUAL/GUIA_DE_HARDERING)
 
 [def]: https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub
