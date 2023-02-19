@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-02-19T19:09:06+01:00",
+  "id": "GUIA_DE_UNIFI",
+  "duration": 19,
+  "title": "GUIA DE HARDENIG",
+  "summary": "",
+  "source": "GUIA_HARDERING_UNIFI.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708",
+  "url": "GUIA_DE_UNIFI"
+}

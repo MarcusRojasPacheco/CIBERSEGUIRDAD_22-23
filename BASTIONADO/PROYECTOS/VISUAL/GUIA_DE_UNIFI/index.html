@@ -1,0 +1,92 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>GUIA DE HARDENIG</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="GUIA_DE_UNIFI"
+                  title="GUIA DE HARDENIG"
+                  environment="web"
+                  feedback-link="https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708">
+    
+      <google-codelab-step label="ROUTEROS - UNIFI" duration="2">
+        <h2 is-upgraded>QUE SE USARA EN ESTA GUIA</h2>
+<p>Para usar esta guia en nuestra empresa creada con lo cual vamos a usa para la red de <strong>2.4 GHz </strong><a href="https://github.com/IES-Rafael-Alberti/Area-de-trabajo-general/blob/main/PROYECTO-8/PLANOS/2-4%20GHz.pdf" target="_blank">PLANO 2.4GHz</a> y otra red de <strong>5 Ghz </strong><a href="https://github.com/IES-Rafael-Alberti/Area-de-trabajo-general/blob/main/PROYECTO-8/PLANOS/5Ghz.pdf" target="_blank">PLANO 5 GHz</a>, estos planos se han realizado con el plano original de la oficina Atrak-Dos <a href="https://github.com/IES-Rafael-Alberti/Area-de-trabajo-general/blob/main/PROYECTO-8/PLANOS/Planos%20de%20planta%20de%20oficina.png" target="_blank">PLANOS ORIGINAL</a></p>
+<h3 is-upgraded>ROUTER QUE SE HA USADO EN CADA PLANO</h3>
+<h4 is-upgraded><strong>PLANOS 2.4 GHz</strong></h4>
+<p>Se van usar <strong>3</strong> Router, en el cual dos de ellos copiara la configuración y difundir la red sin dar conflictos.</p>
+<h4 is-upgraded><strong>PLANOS 5 GHz</strong></h4>
+<p>Se van usar <strong>4</strong> Router, en el cual tres de ellos copiara la configuración y difundir la red sin dar conflictos.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="UNIFI - CONFIGURAR WIFI OFICINA" duration="7">
+        <h2 is-upgraded>CONTRASEÑA DE LA RED</h2>
+<p>Ahora vamos a configurar el <strong>nombre</strong> y la <strong>contraseña</strong> de la red wifi para la oficina. <img alt="CONTRASENA" src="img\\824964dbe3aa8b95.png"></p>
+<p>Ahora vamos a configurar la opciones avanzadas de la siguiente manera. <img alt="AVANZADO" src="img\\94302074a7dded7.png"></p>
+<h2 is-upgraded>SEGURIDAD</h2>
+<p>Añadimos seguirdad en el Router para mayor seguridad en el.</p>
+<p class="image-container"><img alt="SEGURIDAD" src="img\\2ad34442fb20441a.png"></p>
+<p>Ahora vamos agregar el servicio <strong>Radius</strong> en la cual se va poner los empleados que pueda conectarse a la red.</p>
+<p class="image-container"><img alt="RADIUS" src="img\\33ee050f5485923b.png"></p>
+<h2 is-upgraded>HORARIO</h2>
+<p>Ahora vamos añadir un horario en la cual va estar activo el wifi en nuestra empresa, y ya que fuera del horario de la empresa no va estar operativo.</p>
+<p class="image-container"><img alt="HORARIO" src="img\\d5871a5aad4e4ff9.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="UNIFI - CONFIGURAR WIFI CLIENTE" duration="7">
+        <h2 is-upgraded>CONECTARSE A LA RED</h2>
+<p>Como es una red de cliente en la sala de espera pondra un QR para poder conectarse, con lo cual se tendra el siguiente parametro que se podra conectar con <strong>facebook</strong></p>
+<p class="image-container"><img alt="FACEBOOK-LOGIN" src="img\\80d5e8f0a81c6757.png"></p>
+<h2 is-upgraded>SEGURIDAD</h2>
+<p>Ahora vamos a configurar la seguridad que nos proporciona esta sección con lo cual vamos a ponerla de la siguiente manera:</p>
+<p class="image-container"><img alt="SEGURIDAD" src="img\\4cd04ce15ac2c4cc.png"></p>
+<h2 is-upgraded>TIEMPO DE USO DE LA RED</h2>
+<p>Ahora vamos a configurar el tiempo en la cual va estar conectado, con lo cual se va poner un maximo de <strong>8 Horas</strong> y lo reedirija a una URL para poder user la red.</p>
+<p class="image-container"><img alt="TIEMPO" src="img\\53ebb0d3affb41c9.png"></p>
+<p>Añadimos que el URL sea encriptado y que el lenguaje salga en español. <img alt="TIEMPO" src="img\\866d7f094c645a0b.png"></p>
+<h2 is-upgraded>HORARIO DE LA RED</h2>
+<p>Como la red de la oficina, la red cliente tendra el mismo horario de funcionamiento de la red wifi para los clientes.</p>
+<p class="image-container"><img alt="CLIENTESHORARIO" src="img\\f622b1a9bcdf00cf.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="UNIFI - REDES CREADAS" duration="3">
+        <h2 is-upgraded>LAS REDES CREADAS</h2>
+<p>Una vez creada las red ya se puede ver que se fue creada con exito y para los demas router es simplemente ponerlo en modo repetidor que amplifique la red de la empresa. <img alt="RED WIFI" src="img\\e62243ab856f750c.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
