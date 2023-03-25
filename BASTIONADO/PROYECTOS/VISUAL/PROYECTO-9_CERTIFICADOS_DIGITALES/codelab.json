@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-03-25T12:44:28+01:00",
+  "id": "PROYECTO-9_CERTIFICADOS_DIGITALES",
+  "duration": 15,
+  "title": "CERTIFICADOS DIGITALES",
+  "summary": "",
+  "source": "Proyecto-9_Certificados_digitales.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/IES-Rafael-Alberti/MRP-Proyecto-Bastionado/issues/1#issue-1419817708",
+  "url": "PROYECTO-9_CERTIFICADOS_DIGITALES"
+}
